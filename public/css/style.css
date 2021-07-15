@@ -17238,8 +17238,8 @@ blockquote .user-name:before {
 
 @media (max-width: 1599.98px) {
   .slide-style-2 .slide-content .title {
-    font-size: 50px;
-    line-height: 71px;
+    font-size: 35px;
+    line-height: 40px;
   }
 }
 
@@ -17252,7 +17252,7 @@ blockquote .user-name:before {
 
 .slide-style-2 .slide-content .short-desc {
   text-transform: capitalize;
-  font-size: 30px;
+  font-size: 22px;
   line-height: 22px;
   font-weight: 300;
 }
