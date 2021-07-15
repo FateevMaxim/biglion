@@ -27,8 +27,8 @@
                                     <div class="col-lg-6 col-md-8 offset-md-2 offset-lg-0 order-1 order-lg-2">
                                         <div class="inner-img">
                                             <div class="scene fill">
-                                                <div class="expand-width" data-depth="0.2">
-                                                    <img src="{{ asset('/storage/'.$pieces[0]) }}" alt="{{ $slider->categoryName }}">
+                                                <div class="expand-width text-center" data-depth="0.2">
+                                                    <img src="{{ asset('/storage/'.$pieces[0]) }}" width="60%" alt="{{ $slider->categoryName }}">
                                                 </div>
                                             </div>
                                         </div>
