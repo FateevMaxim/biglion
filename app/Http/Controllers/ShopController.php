@@ -22,7 +22,7 @@ class ShopController extends Controller
     {
         $items = new Products();
         $allProducts = Products::where('available', '!=', '0')->with(['brandBond'])->groupBy('categoryName')->paginate(15);
-        $allProductsMenu = Products::all();
+        $allProductsMenu = Products::all()->where('available', '!=', '0');
 
 
         /** Подтягивание и подсчёт товаров с определённым брендом**/
