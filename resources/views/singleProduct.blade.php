@@ -65,7 +65,7 @@
                         <div class="single-product-content">
                             <h2 class="title mb-3">{{ $exactProduct[0]->categoryBond->category }} {{ $exactProduct[0]->brandBond->brand }} {{ $exactProduct[0]->categoryName }} {{ $exactProduct[0]->weight }}</h2>
                             <div class="price-box pb-3">
-                                <span class="new-price text-danger">₸{{ $exactProduct[0]->priceShop }}</span>
+                                <span class="new-price text-danger">₸{{ number_format($exactProduct[0]->priceShop, 0, '', ' ') }}</span>
                             </div>
                             <div class="selector-wrap color-option pb-55">
                                 <span class="selector-title">Вкус</span>
