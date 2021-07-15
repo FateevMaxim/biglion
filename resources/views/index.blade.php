@@ -90,7 +90,7 @@
                             <div class="banner-img img-zoom-effect">
                                 <img class="img-full" src="{{ asset('/images/banner/'.$imgBanner.'.jpg') }}" alt="{{ $product->categoryName }}">
                                 <div class="inner-content text-white @if($imgBanner > 2) text-right text-night-rider @endif ">
-                                    <h3 class="offer">{{ $product->priceShop }} тенге</h3>
+                                    <h3 class="offer">{{ number_format($product->priceShop, 0, '', ' ') }} тенге</h3>
                                     <h2 class="title">{{ $product->brandBond->brand }}<br>{{ $product->categoryName }}</h2>
                                     <div class="button-wrap">
                                         <a class="btn btn-custom-size btn-primary" href="/singleProduct/{{ $product->id }}">Купить</a>
