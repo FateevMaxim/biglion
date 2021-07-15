@@ -17120,11 +17120,11 @@ blockquote .user-name:before {
           align-items: center;
 }
 
-@media (max-width: 479px) {
+/*@media (max-width: 479px) {
   .header-logo {
     width: 140px;
   }
-}
+}*/
 
 /* ---Header Sticky--- */
 .sticky {
