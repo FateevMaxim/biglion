@@ -23,14 +23,6 @@
                 <div class="row">
                     <div class="col-xl-3 col-lg-4 order-lg-1 order-2s pt-10 pt-lg-0">
                         <div class="sidebar-area style-2">
-                            <div class="widgets-searchbox widgets-area py-6 mb-5">
-                                <form id="widgets-searchbox" action="#">
-                                    <input class="input-field" type="text" placeholder="Поиск">
-                                    <button class="widgets-searchbox-btn" type="submit">
-                                        <i class="pe-7s-search"></i>
-                                    </button>
-                                </form>
-                            </div>
                             <div class="widgets-area mb-5">
                                 <h2 class="widgets-title mb-5">Цель</h2>
                                 <div class="widgets-item">
@@ -125,16 +117,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="short">
-                                    <select class="nice-select rounded-0">
-                                        <option value="1">По умолчанию</option>
-                                        <option value="2">По популярности</option>
-                                        <option value="3">По рейтингу</option>
-                                        <option value="4">Самые новые</option>
-                                        <option value="5">По возрастающей цене</option>
-                                        <option value="6">По убывающей цене</option>
-                                    </select>
-                                </li>
+                              
                             </ul>
                         </div>
 
@@ -200,35 +183,7 @@
                                                     <div class="price-box pb-1">
                                                         <span class="new-price">₸{{ $product->priceShop }}</span>
                                                     </div>
-                                                    <div class="rating-box pb-2">
-                                                        <ul>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
                                                     <p class="short-desc mb-0">{{ \Illuminate\Support\Str::limit(strip_tags($product->description), 300) }} </p>
-                                                    <div class="product-add-action">
-                                                        <ul>
-                                                            <li>
-                                                                <a href="#" data-tippy="Добавить в корзину" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                                    <i class="pe-7s-cart"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li class="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                                                                <a href="#" data-tippy="Быстрый просмотр" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                                    <i class="pe-7s-look"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="wishlist.html" data-tippy="Сохранить на будущее" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                                    <i class="pe-7s-like"></i>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
