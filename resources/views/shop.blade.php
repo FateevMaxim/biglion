@@ -139,7 +139,7 @@
                                                     <div class="price-box">
                                                         <div class="price-box-holder">
                                                             <span>Цена:</span>
-                                                            <span class="new-price text-primary">₸{{ $product->priceShop }}</span>
+                                                            <span class="new-price text-primary">₸{{ number_format($product->priceShop, 0, '', ' ') }}</span>
                                                         </div>
                                                     </div>
                                                   
@@ -163,7 +163,7 @@
                                                 <div class="product-list-content">
                                                     <a class="product-name pb-2" href="/singleProduct/{{ $product->id }}">{{ $product->brandBond->brand }} {{ $product->categoryName }} {{ $product->weight }}</a>
                                                     <div class="price-box pb-1">
-                                                        <span class="new-price">₸{{ $product->priceShop }}</span>
+                                                        <span class="new-price">₸{{ number_format($product->priceShop, 0, '', ' ') }}</span>
                                                     </div>
                                                     <p class="short-desc mb-0">{{ \Illuminate\Support\Str::limit(strip_tags($product->description), 300) }} </p>
                                                 </div>
