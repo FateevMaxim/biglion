@@ -21,7 +21,7 @@ class ShopController extends Controller
     public function index()
     {
         $items = new Products();
-        $allProducts = Products::with(['brandBond'])->groupBy('categoryName')->paginate(15);
+        $allProducts = Products::where('available', '!=', '0')->with(['brandBond'])->groupBy('categoryName')->paginate(15);
         $allProductsMenu = Products::all();
 
 

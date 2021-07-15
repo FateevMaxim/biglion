@@ -12,7 +12,7 @@ class SingleProductController extends Controller
 
         $exactProduct = Products::where('id', $id)->with('brandBond')->get();
         $categories = ProductsCategories::all();
-        $customTasteProduct = Products::select('id', 'taste')->where('categoryName', $exactProduct[0]->categoryName)->get();
+        $customTasteProduct = Products::select('id', 'taste')->where('available', '!=', '0')->where('categoryName', $exactProduct[0]->categoryName)->get();
 
         return view('singleProduct', compact('exactProduct', 'customTasteProduct', 'categories'));
     }

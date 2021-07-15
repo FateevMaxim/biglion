@@ -14,9 +14,9 @@ class ShopFilterController extends Controller
 
     public function purpose($id)
     {
-        $allProducts = Products::where('purpose', $id)->with(['purposeBond'])->groupBy('categoryName')->paginate(15);
+        $allProducts = Products::where('available', '!=', '0')->where('purpose', $id)->with(['purposeBond'])->groupBy('categoryName')->paginate(15);
         //$allProductsMenu = Products::all();
-        $allProductsMenu = Products::select('categoryNutrition', 'brand', 'taste', 'categoryName', 'purpose')->get();
+        $allProductsMenu = Products::select('categoryNutrition', 'brand', 'taste', 'categoryName', 'purpose')->where('available', '!=', '0')->get();
         /** Подтягивание и подсчёт товаров с определённым брендом**/
         $brands = ProductsBrand::all();
         foreach ($brands as $brand){
@@ -70,8 +70,8 @@ class ShopFilterController extends Controller
 
 
     public function category($id){
-        $allProducts = Products::where('categoryNutrition', $id)->with(['categoryBond'])->groupBy('categoryName')->paginate(15);
-        $allProductsMenu = Products::select('categoryNutrition', 'brand', 'taste', 'categoryName', 'purpose')->get();
+        $allProducts = Products::where('available', '!=', '0')->where('categoryNutrition', $id)->with(['categoryBond'])->groupBy('categoryName')->paginate(15);
+        $allProductsMenu = Products::select('categoryNutrition', 'brand', 'taste', 'categoryName', 'purpose')->where('available', '!=', '0')->get();
         /** Подтягивание и подсчёт товаров с определённым брендом**/
         $brands = ProductsBrand::all();
         foreach ($brands as $brand){
@@ -124,8 +124,8 @@ class ShopFilterController extends Controller
 
 
     public function brand($id){
-        $allProducts = Products::where('brand', $id)->with(['brandBond'])->groupBy('categoryName')->paginate(15);
-        $allProductsMenu = Products::select('categoryNutrition', 'brand', 'taste', 'categoryName', 'purpose')->get();
+        $allProducts = Products::where('available', '!=', '0')->where('brand', $id)->with(['brandBond'])->groupBy('categoryName')->paginate(15);
+        $allProductsMenu = Products::select('categoryNutrition', 'brand', 'taste', 'categoryName', 'purpose')->where('available', '!=', '0')->get();
         /** Подтягивание и подсчёт товаров с определённым брендом**/
         $brands = ProductsBrand::all();
         foreach ($brands as $brand){
@@ -177,8 +177,8 @@ class ShopFilterController extends Controller
 
 
     public function taste($id){
-        $allProducts = Products::where('taste', $id)->with(['tasteBond'])->groupBy('categoryName')->paginate(15);
-        $allProductsMenu = Products::select('categoryNutrition', 'brand', 'taste', 'categoryName', 'purpose')->get();
+        $allProducts = Products::where('available', '!=', '0')->where('taste', $id)->with(['tasteBond'])->groupBy('categoryName')->paginate(15);
+        $allProductsMenu = Products::select('categoryNutrition', 'brand', 'taste', 'categoryName', 'purpose')->where('available', '!=', '0')->get();
         /** Подтягивание и подсчёт товаров с определённым брендом**/
         $brands = ProductsBrand::all();
         foreach ($brands as $brand){
