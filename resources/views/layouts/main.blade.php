@@ -120,9 +120,9 @@
                                     </ul>
                                 </nav>
                             </div>
-                            {{--<div class="header-right">
+                            <div class="header-right">
                                 <ul>
-                                    <li class="dropdown d-none d-lg-block">
+                                    {{--<li class="dropdown d-none d-lg-block">
                                         <button class="btn btn-link dropdown-toggle ht-btn p-0" type="button" id="settingButton" data-bs-toggle="dropdown" aria-label="setting" aria-expanded="false">
                                             <i class="pe-7s-user"></i>
                                         </button>
@@ -159,14 +159,14 @@
                                             <i class="pe-7s-shopbag"></i>
                                             <span class="quantity">1</span>
                                         </a>
-                                    </li>
+                                    </li>--}}
                                     <li class="mobile-menu_wrap d-block d-lg-none">
                                         <a href="#mobileMenu" class="mobile-menu_btn toolbar-btn pl-0">
                                             <i class="pe-7s-menu"></i>
                                         </a>
                                     </li>
                                 </ul>
-                            </div>--}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -178,10 +178,10 @@
                     <div class="offcanvas-top">
                         <a href="#" class="button-close"><i class="pe-7s-close"></i></a>
                     </div>
-                    <div class="offcanvas-user-info text-center px-6 pb-5">
-                        {{--<div class=" text-silver">
+                    {{--<div class="offcanvas-user-info text-center px-6 pb-5">
+                        <div class=" text-silver">
                             <p class="shipping mb-0">Бесплатная доставка от <span class="text-primary">20 000 тенге</span></p>
-                        </div>--}}
+                        </div>
                         <ul class="dropdown-wrap justify-content-center text-silver">
                             <li class="dropdown dropup">
                                 <button class="btn btn-link dropdown-toggle ht-btn p-0" type="button" id="settingButtonTwo" data-bs-toggle="dropdown" aria-expanded="false">
@@ -213,7 +213,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </div>
+                    </div>--}}
                     <div class="offcanvas-menu_area">
                         <nav class="offcanvas-navigation">
                             <ul class="mobile-menu">
