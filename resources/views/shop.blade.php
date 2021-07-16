@@ -176,7 +176,7 @@
 
                         </div>
                        @if($allProducts->total() > $allProducts->perPage())
-                        <div class="pagination-area pt-10">
+                        <div class="pagination-area pt-10 pb-5">
                             <nav aria-label="Page navigation example">
                                 {{ $allProducts->links() }}
                             </nav>
