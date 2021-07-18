@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [IndexController::class, 'index']);
+Route::get('/offer', [IndexController::class, 'offer']);
+Route::get('/details', [IndexController::class, 'details']);
 
 Route::resource('Product', ProductController::class);
 Route::resource('Shop', ShopController::class);

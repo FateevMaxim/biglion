@@ -349,19 +349,15 @@
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6 pt-8 pt-lg-0">
                         <div class="widget-item">
-                            <h3 class="widget-title mb-5">Нужна помощь</h3>
+                            <h3 class="widget-title mb-5">Нужна помощь?</h3>
                             <ul class="widget-list-item">
                                 <li>
                                     <i class="fa fa-chevron-right"></i>
-                                    <a href="#">Условия и положения</a>
+                                    <a href="/offer">Публичная оферта</a>
                                 </li>
                                 <li>
                                     <i class="fa fa-chevron-right"></i>
-                                    <a href="#">Политика конфиденциальности</a>
-                                </li>
-                                <li>
-                                    <i class="fa fa-chevron-right"></i>
-                                    <a href="#">Возврат товара</a>
+                                    <a href="/details">Реквизиты</a>
                                 </li>
                             </ul>
                         </div>

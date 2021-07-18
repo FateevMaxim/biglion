@@ -18,4 +18,13 @@ class IndexController extends Controller
 
         return view('index', compact('brands', 'categories', 'products', 'sliders'));
     }
+
+    public function details () {
+        $categories = ProductsCategories::all();
+        return view('details', compact('categories'));
+    }
+    public function offer () {
+        $categories = ProductsCategories::all();
+        return view('offer', compact('categories'));
+    }
 }
