@@ -109,10 +109,19 @@
                                         <li class="megamenu-holder">
                                             <a href="/Shop">Магазин</a>
                                         </li>
+                                        {{--<li class="menu-item-has-children">
+                                            <a href="/testosterone">
+                                                <span class="mm-text">Тестостерон</span>
+                                            </a>
+                                        </li>--}}
                                         <?php
                                             if (isset(\Illuminate\Support\Facades\Auth::user()->user_type) AND \Illuminate\Support\Facades\Auth::user()->user_type == 'admin'){
                                                 echo '<li class="drop-holder">
                                                         <a href="/Product/create">Добавить товар
+                                                        </a>
+                                                    </li>
+                                                    <li class="drop-holder">
+                                                        <a href="/testosterone/create">Добавить тестостерон
                                                         </a>
                                                     </li>';
                                             }
@@ -227,10 +236,19 @@
                                         <span class="mm-text">Магазин</span>
                                     </a>
                                 </li>
+                                <li class="menu-item-has-children">
+                                    <a href="/testosterone">
+                                        <span class="mm-text">Тестостерон</span>
+                                    </a>
+                                </li>
                                 <?php
                                 if (isset(\Illuminate\Support\Facades\Auth::user()->user_type) AND \Illuminate\Support\Facades\Auth::user()->user_type == 'admin'){
                                     echo '<li class="drop-holder">
                                             <a href="/Product/create">Добавить товар
+                                            </a>
+                                        </li>
+                                        <li class="drop-holder">
+                                            <a href="/testosterone/create">Добавить тестостерон
                                             </a>
                                         </li>';
                                 }
