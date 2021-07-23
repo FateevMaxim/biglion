@@ -11,7 +11,9 @@
                                 <li>
                                     <a href="/">Главная /</a>
                                 </li>
-                                <li>Магазин</li>
+                                <li>
+                                    <a href="/testosterone">Тестостерон</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -23,14 +25,14 @@
                 <div class="row">
                     <div class="col-xl-3 col-lg-4 order-lg-1 order-2s pt-10 pt-lg-0">
                         <div class="sidebar-area style-2">
-                            <div class="widgets-searchbox widgets-area py-6 mb-5">
+                            {{--<div class="widgets-searchbox widgets-area py-6 mb-5">
                                 <form id="widgets-searchbox" action="#">
                                     <input class="input-field" type="text" placeholder="Поиск">
                                     <button class="widgets-searchbox-btn" type="submit">
                                         <i class="pe-7s-search"></i>
                                     </button>
                                 </form>
-                            </div>
+                            </div>--}}
                             <div class="widgets-area mb-5">
                                 <h2 class="widgets-title mb-5">Категории</h2>
                                 <div class="widgets-item">
