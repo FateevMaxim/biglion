@@ -22,6 +22,7 @@ class SingleProductController extends Controller
     public function singleTestosterone ($id) {
         $exactProduct = Testosterone::where('id', $id)->with('testosteroneBrandBond')->get();
         $categories = TestosteroneMainCategory::all();
-        return view('singleTestosterone', compact('exactProduct', 'categories'));
+        $categoriesTestosterone = $categories;
+        return view('singleTestosterone', compact('exactProduct', 'categories', 'categoriesTestosterone'));
     }
 }

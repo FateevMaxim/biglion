@@ -356,12 +356,22 @@
                         <div class="widget-item">
                             <h3 class="widget-title mb-5">Продукты</h3>
                             <ul class="widget-list-item">
-                                @foreach($categories as $category)
-                                    <li>
-                                        <i class="fa fa-chevron-right"></i>
-                                        <a href="/shop/category/{{ $category->id }}">{{ $category->category }}</a>
-                                    </li>
-                                @endforeach
+                                @if(isset($categories->category))
+                                    @foreach($categories as $category)
+                                        <li>
+                                            <i class="fa fa-chevron-right"></i>
+                                            <a href="/shop/category/{{ $category->id }}">{{ $category->category }}</a>
+                                        </li>
+                                    @endforeach
+                                @endif
+                                @if($categoriesTestosterone)
+                                    @foreach($categoriesTestosterone as $category)
+                                        <li>
+                                            <i class="fa fa-chevron-right"></i>
+                                            <a href="/shop/category/{{ $category->id }}">{{ $category->main_category }}</a>
+                                        </li>
+                                    @endforeach
+                                @endif
                             </ul>
                         </div>
                     </div>

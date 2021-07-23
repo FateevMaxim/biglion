@@ -1,4 +1,4 @@
-@extends('layouts.main', $categories)
+@extends('layouts.main', $categoriesTestosterone)
 
 @section('content')
     <main class="main-content">
@@ -68,7 +68,7 @@
                             <div class="price-box pb-3">
                                 <span class="new-price text-danger">₸{{ number_format($exactProduct[0]->priceShop, 0, '', ' ') }}</span>
                             </div>
-                            <ul class="quantity-with-btn pb-9">
+                            {{--<ul class="quantity-with-btn pb-9">
                                 <li class="quantity">
                                     <div class="cart-plus-minus">
                                         <input class="cart-plus-minus-box" value="1" type="text">
@@ -82,7 +82,7 @@
                                         <i class="pe-7s-like"></i>
                                     </a>
                                 </li>
-                            </ul>
+                            </ul>--}}
                             <div class="product-category pb-3">
                                 <span class="title">Категория :</span>
                                 <ul>
@@ -139,11 +139,11 @@
                                     Описание
                                 </a>
                             </li>
-                            <li class="nav-item" role="presentation">
+                            {{--<li class="nav-item" role="presentation">
                                 <a class="tab-btn" id="reviews-tab" data-bs-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">
                                     Отзывы(3)
                                 </a>
-                            </li>
+                            </li>--}}
                         </ul>
                         <div class="tab-content product-tab-content">
                             <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
@@ -151,7 +151,7 @@
                                     {!! $exactProduct[0]->description !!}
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+                            {{--<div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
                                 <div class="product-review-body">
                                     <div class="blog-comment">
                                         <h4 class="heading mb-7">3 Комментария</h4>
@@ -216,13 +216,13 @@
                                         </form>
                                     </div>
                                 </div>
-                            </div>
+                            </div>--}}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="background-img" data-bg-image="assets/images/background-img/1-2-1920x716.jpg">
+        {{--<div class="background-img" data-bg-image="assets/images/background-img/1-2-1920x716.jpg">
             <div class="product-area product-arrow section-space-y-axis-100">
                 <div class="container">
                     <div class="section-title pb-55">
@@ -415,6 +415,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--}}
     </main>
 @endsection

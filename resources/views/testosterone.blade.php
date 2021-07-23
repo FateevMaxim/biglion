@@ -1,4 +1,4 @@
-@extends('layouts.main', $categories)
+@extends('layouts.main', $categoriesTestosterone)
 @section('content')
     <main class="main-content">
         <div class="breadcrumb-area breadcrumb-height" data-bg-image="{{ asset('images/breadcrumb/bg/1-1-1920x400.jpg') }}">
@@ -79,9 +79,10 @@
                                     </ul>
                                 </div>
                             </div>
-                            @if(Route::current()->getName() != 'Shop.index')
+
+                            @if(Request::path() != 'testosterone')
                                 <div class="widgets-area mb-5 text-center">
-                                    <a href="/Shop"><button type="button" class="btn btn-primary">Показать всё</button></a>
+                                    <a href="/testosterone"><button type="button" class="btn btn-primary">Показать всё</button></a>
                                 </div>
                             @endif
                         </div>
@@ -106,7 +107,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="short">
+                                {{--<li class="short">
                                     <select class="nice-select rounded-0">
                                         <option value="1">По умолчанию</option>
                                         <option value="2">По популярности</option>
@@ -115,7 +116,7 @@
                                         <option value="5">По возрастающей цене</option>
                                         <option value="6">По убывающей цене</option>
                                     </select>
-                                </li>
+                                </li>--}}
                             </ul>
                         </div>
 
@@ -140,7 +141,7 @@
                                                             <span class="new-price text-primary">₸{{ number_format($product->priceShop, 0, '', ' ') }}</span>
                                                         </div>
                                                     </div>
-                                                    <div class="product-add-action">
+                                                   {{-- <div class="product-add-action">
                                                         <ul>
                                                             <li>
                                                                 <a href="#" data-tippy="Добавить в корзину" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
@@ -158,7 +159,7 @@
                                                                 </a>
                                                             </li>
                                                         </ul>
-                                                    </div>
+                                                    </div>--}}
                                                 </div>
                                             </div>
                                         </div>
@@ -183,7 +184,7 @@
                                                     </div>
 
                                                     <p class="short-desc mb-0">{{ \Illuminate\Support\Str::limit(strip_tags($product->description), 300) }} </p>
-                                                    <div class="product-add-action">
+                                                    {{--<div class="product-add-action">
                                                         <ul>
                                                             <li>
                                                                 <a href="#" data-tippy="Добавить в корзину" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
@@ -201,7 +202,7 @@
                                                                 </a>
                                                             </li>
                                                         </ul>
-                                                    </div>
+                                                    </div>--}}
                                                 </div>
                                             </div>
                                         </div>
