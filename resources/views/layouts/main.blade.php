@@ -399,10 +399,10 @@
                                     Адрес : г.Алматы, ул. Гоголя, д.75
                                 </li>
                                 <li>
-                                    <a href="mailto://info@example.com">info@biglion.com</a>
+                                    <a href="mailto://manager@big-lion.kz">manager@big-lion.kz</a>
                                 </li>
                                 <li>
-                                    <a href="tel://+77021993333">Телефон : +7 702 199 3333</a>
+                                    <a href="tel://+77003033360">Телефон : +7 700 303 3360</a>
                                 </li>
                             </ul>
                         </div>
@@ -420,7 +420,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="copyright">
-                            <span class="copyright-text">© 2021 Redlines All Rights Reserved.</span>
+                            <span class="copyright-text">© 2021 Big Lion All Rights Reserved.</span>
                         </div>
                     </div>
                 </div>
