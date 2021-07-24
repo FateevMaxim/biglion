@@ -7,7 +7,7 @@
                 <div class="row h-100">
                     <div class="col-lg-12">
                         <div class="breadcrumb-item text-white">
-                            <h2 class="breadcrumb-heading">Спортивное питание</h2>
+                            <h2 class="breadcrumb-heading">Стероиды</h2>
                             <ul>
                                 <li>
                                     <a href="/">Главная /</a>
