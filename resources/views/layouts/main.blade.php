@@ -2,9 +2,8 @@
 <html lang="ru">
 
 <head>
-    <title>Big Lion - sport nutrition</title>
-    <meta name="description" content="Tromic car accessories bootstrap 5 template is an awesome website template for any modern car accessories shop.">
-
+    <title>Big Lion - @yield('title')</title>
+    @yield('meta')
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -76,7 +75,7 @@
                             <ul class="dropdown-wrap text-matterhorn">
                                 <li>
                                     Позвонить
-                                    <a href="tel://+77021993333">+7 702 199 3333</a>
+                                    <a href="tel://+77003033360">+7 700 303 3360</a>
                                 </li>
                             </ul>
                         </div>
@@ -109,11 +108,11 @@
                                         <li class="megamenu-holder">
                                             <a href="/Shop">Магазин</a>
                                         </li>
-                                        {{--<li class="menu-item-has-children">
+                                        <li class="menu-item-has-children">
                                             <a href="/testosterone">
                                                 <span class="mm-text">Тестостерон</span>
                                             </a>
-                                        </li>--}}
+                                        </li>
                                         <?php
                                             if (isset(\Illuminate\Support\Facades\Auth::user()->user_type) AND \Illuminate\Support\Facades\Auth::user()->user_type == 'admin'){
                                                 echo '<li class="drop-holder">
@@ -356,7 +355,7 @@
                         <div class="widget-item">
                             <h3 class="widget-title mb-5">Продукты</h3>
                             <ul class="widget-list-item">
-                                @if(isset($categories->category))
+                                @if(isset($categories))
                                     @foreach($categories as $category)
                                         <li>
                                             <i class="fa fa-chevron-right"></i>
@@ -364,11 +363,11 @@
                                         </li>
                                     @endforeach
                                 @endif
-                                @if($categoriesTestosterone)
-                                    @foreach($categoriesTestosterone as $category)
+                                @if(isset($categoriesTestosterone))
+                                    @foreach($categoriesTestosterone as $categoryTestosterone)
                                         <li>
                                             <i class="fa fa-chevron-right"></i>
-                                            <a href="/shop/category/{{ $category->id }}">{{ $category->main_category }}</a>
+                                            <a href="/shop/category/{{ $categoryTestosterone->id }}">{{ $categoryTestosterone->main_category }}</a>
                                         </li>
                                     @endforeach
                                 @endif

@@ -76,7 +76,7 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <ul class="quantity-with-btn pb-9">
+                            {{--<ul class="quantity-with-btn pb-9">
                                 <li class="quantity">
                                     <div class="cart-plus-minus">
                                         <input class="cart-plus-minus-box" value="1" type="text">
@@ -90,7 +90,7 @@
                                         <i class="pe-7s-like"></i>
                                     </a>
                                 </li>
-                            </ul>
+                            </ul>--}}
                             <div class="product-category pb-3">
                                 <span class="title">Категория :</span>
                                 <ul>
@@ -147,11 +147,11 @@
                                     Описание
                                 </a>
                             </li>
-                            <li class="nav-item" role="presentation">
+                            {{--<li class="nav-item" role="presentation">
                                 <a class="tab-btn" id="reviews-tab" data-bs-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">
                                     Отзывы(3)
                                 </a>
-                            </li>
+                            </li>--}}
                         </ul>
                         <div class="tab-content product-tab-content">
                             <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
@@ -159,7 +159,7 @@
                                     {!! $exactProduct[0]->description !!}
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+                            {{--<div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
                                 <div class="product-review-body">
                                     <div class="blog-comment">
                                         <h4 class="heading mb-7">3 Комментария</h4>
@@ -224,13 +224,13 @@
                                         </form>
                                     </div>
                                 </div>
-                            </div>
+                            </div>--}}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="background-img" data-bg-image="assets/images/background-img/1-2-1920x716.jpg">
+        {{--<div class="background-img" data-bg-image="assets/images/background-img/1-2-1920x716.jpg">
             <div class="product-area product-arrow section-space-y-axis-100">
                 <div class="container">
                     <div class="section-title pb-55">
@@ -282,132 +282,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="swiper-slide">
-                                        <div class="product-item">
-                                            <div class="product-img img-zoom-effect">
-                                                <a href="shop.html">
-                                                    <img class="img-full" src="assets/images/product/medium-size/product-slider/1-2-290x350.jpg" alt="Product Images">
-                                                </a>
-                                            </div>
-                                            <div class="product-content">
-                                                <a class="product-name pb-1" href="shop.html">Ultimate Creatine 1000 гр.</a>
-                                                <div class="price-box">
-                                                    <div class="price-box-holder">
-                                                        <span>Цена:</span>
-                                                        <span class="new-price text-primary">₸19 000</span>
-                                                    </div>
-                                                </div>
-                                                <div class="product-add-action">
-                                                    <ul>
-                                                        <li>
-                                                            <a href="#" data-tippy="Добавить в корзину" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                                <i class="pe-7s-cart"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li class="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                                                            <a href="#" data-tippy="Быстрый просмотр" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                                <i class="pe-7s-look"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="wishlist.html" data-tippy="Сохранить на будущее" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                                <i class="pe-7s-like"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="compare.html" data-tippy="Добавить в сравнение" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                                <i class="pe-7s-shuffle"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="product-item">
-                                            <div class="product-img img-zoom-effect">
-                                                <a href="shop.html">
-                                                    <img class="img-full" src="assets/images/product/medium-size/product-slider/1-3-290x350.jpg" alt="Product Images">
-                                                </a>
-                                            </div>
-                                            <div class="product-content">
-                                                <a class="product-name pb-1" href="shop.html">Animal Flex, 44 пак.</a>
-                                                <div class="price-box">
-                                                    <div class="price-box-holder">
-                                                        <span>Цена:</span>
-                                                        <span class="new-price text-primary">₸25 000</span>
-                                                    </div>
-                                                </div>
-                                                <div class="product-add-action">
-                                                    <ul>
-                                                        <li>
-                                                            <a href="#" data-tippy="Добавить в корзину" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                                <i class="pe-7s-cart"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li class="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                                                            <a href="#" data-tippy="Быстрый просмотр" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                                <i class="pe-7s-look"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="wishlist.html" data-tippy="Сохранить на будущее" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                                <i class="pe-7s-like"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="compare.html" data-tippy="Добавить в сравнение" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                                <i class="pe-7s-shuffle"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="product-item">
-                                            <div class="product-img img-zoom-effect">
-                                                <a href="shop.html">
-                                                    <img class="img-full" src="assets/images/product/medium-size/product-slider/1-4-290x350.jpg" alt="Product Images">
-                                                </a>
-                                            </div>
-                                            <div class="product-content">
-                                                <a class="product-name pb-1" href="shop.html">Carnitine 500 мг, 60 таб.</a>
-                                                <div class="price-box">
-                                                    <div class="price-box-holder">
-                                                        <span>Цена:</span>
-                                                        <span class="new-price text-primary">₸23 000</span>
-                                                    </div>
-                                                </div>
-                                                <div class="product-add-action">
-                                                    <ul>
-                                                        <li>
-                                                            <a href="#" data-tippy="Добавить в корзину" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                                <i class="pe-7s-cart"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li class="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                                                            <a href="#" data-tippy="Быстрый просмотр" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                                <i class="pe-7s-look"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="wishlist.html" data-tippy="Сохранить на будущее" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                                <i class="pe-7s-like"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="compare.html" data-tippy="Добавить в сравнение" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                                <i class="pe-7s-shuffle"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <!-- Add Arrows -->
@@ -423,6 +297,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--}}
     </main>
 @endsection

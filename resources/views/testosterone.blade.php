@@ -1,4 +1,11 @@
 @extends('layouts.main', $categoriesTestosterone)
+@section('title')
+    Купить инъекционные стероиды и стероиды в таблетках от официального поставщика! У нас низкая цена, бесплатная доставка по Алматы и всему Казахстану. Только качественные препараты напрямую от производителей. Balkan Pharmaceuticals (балкан фарма), Horizon Pharmaceuticals, Ice Pharmaceuticals
+@endsection
+@section('meta')
+    <meta name="description" content="Купить инъекционные стероиды и стероиды в таблетках от официального поставщика! У нас низкая цена, бесплатная доставка по Алматы и всему Казахстану. Только качественные препараты напрямую от производителей. Balkan Pharmaceuticals (балкан фарма), Horizon Pharmaceuticals, Ice Pharmaceuticals">
+    <meta property="og:title" content="Купить инъекционные стероиды, стероиды в таблетках, самая низкая цена в Алматы, Казахстане! Balkan Pharmaceuticals (балкан фарма), Horizon Pharmaceuticals, Ice Pharmaceuticals">
+@endsection
 @section('content')
     <main class="main-content">
         <div class="breadcrumb-area breadcrumb-height" data-bg-image="{{ asset('images/breadcrumb/bg/1-1-1920x400.jpg') }}">
@@ -37,7 +44,7 @@
                                 <h2 class="widgets-title mb-5">Категории</h2>
                                 <div class="widgets-item">
                                     <ul class="widgets-category">
-                                        @foreach($categories as $category)
+                                        @foreach($mainCategories as $category)
                                             @if($categoryCountFinal[$category->main_category] > 0)
                                                 <li>
                                                     <a href="/shop/categoryTestosterone/{{ $category->id }}">{{ $category->main_category }}

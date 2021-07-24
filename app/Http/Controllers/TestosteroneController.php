@@ -32,9 +32,9 @@ class TestosteroneController extends Controller
         /** Конец Подтягивание и подсчёт товаров с определённым брендом**/
 
         /** Подтягивание и подсчёт товаров с определённой категорией**/
-        $categories = TestosteroneMainCategory::all();
-        $categoriesTestosterone = $categories;
-        foreach ($categories as $category){
+        $mainCategories = TestosteroneMainCategory::all();
+        $categoriesTestosterone = $mainCategories;
+        foreach ($mainCategories as $category){
             if (!isset($categoryCount)){
                 $categoryCount = collect([$category->main_category => (($allProductsMenu->where('mainCategory', $category->id)->unique('productName'))->count())]);
             }else{
@@ -53,7 +53,7 @@ class TestosteroneController extends Controller
         }
         /** Конец Подтягивания и подсчёта товаров с определённой категорией**/
         //dd(@$allProducts);
-        return view('testosterone', compact( 'allProducts', 'brands', 'brandCountFinal', 'categories', 'categoryCountFinal', 'subCategories', 'categoriesTestosterone', 'subCategoryCountFinal'));
+        return view('testosterone', compact( 'allProducts', 'brands', 'brandCountFinal', 'mainCategories', 'categoryCountFinal', 'subCategories', 'categoriesTestosterone', 'subCategoryCountFinal'));
     }
 
     public function createTestosterone()
