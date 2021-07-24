@@ -1,5 +1,11 @@
 @extends('layouts.main', $categories)
-
+@section('title')
+    Купить стероиды и спортивное питание в Алматы, Казахстане с доставкой
+@endsection
+@section('meta')
+    <meta name="description" content="Big Lion - продажа оригинальных стероидов и спортивного питания напрямую от производителей. Купить стероиды в Алматы и Казахстане с гарантией доставки. Самые низкие цены!">
+    <meta property="og:title" content="Купить стероиды и спортивное питание в Алматы, Казахстане с доставкой от Big Lion">
+@endsection
 @section('content')
     <!-- Begin Slider Area -->
     <div class="slider-area">
