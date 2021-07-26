@@ -152,7 +152,7 @@
                                  </li>
                             </ul>
                         </div>
-                        <div class="wholeShop">
+                        <div class="wholeShop pb-5">
                         <div class="tab-content text-charcoal pt-8">
 
                             <div class="tab-pane fade show active" id="grid-view" role="tabpanel" aria-labelledby="grid-view-tab">
