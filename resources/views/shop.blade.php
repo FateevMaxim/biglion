@@ -282,8 +282,7 @@
                         let newURL = url + '?';
                         newURL += 'orderBy=' + orderBy;
                         history.pushState({}, '', newURL);
-                        $('.wholeShop').html(data),
-                        $('.nice-select').val(orderBy)
+                        $('.wholeShop').html(data)
                     }
                 });
             })

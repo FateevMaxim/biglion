@@ -12,7 +12,7 @@
                             </a>
                         </div>
                         <div class="product-content">
-                            <a class="product-name pb-1" href="/singleProduct/{{ $product->id }}">{{ $product->brandBond->brand }} {{ $product->categoryName }}{{ $selected }} {{ $product->weight }}</a>
+                            <a class="product-name pb-1" href="/singleProduct/{{ $product->id }}">{{ $product->brandBond->brand }} {{ $product->categoryName }} {{ $product->weight }}</a>
                             <div class="price-box">
                                 <div class="price-box-holder">
                                     <span>Цена:</span>
