@@ -29,6 +29,7 @@
     <meta name="msapplication-TileImage" content="{{asset('images/favicon/ms-icon-144x144.png')}}">
     <meta name="theme-color" content="#ffffff">
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- CSS
     ============================================ -->
 

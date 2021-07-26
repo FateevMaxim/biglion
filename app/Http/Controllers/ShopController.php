@@ -18,11 +18,51 @@ class ShopController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+
+
         $items = new Products();
-        $allProducts = Products::where('available', '!=', '0')->with(['brandBond'])->groupBy('categoryName')->paginate(15);
+
         $allProductsMenu = Products::all()->where('available', '!=', '0');
+
+
+        if(isset($request->orderBy)){
+            if ($request->orderBy == 'price-low-high'){
+                $allProducts = Products::where('available', '!=', '0')->with(['brandBond'])->groupBy('categoryName')->orderBy('priceShop')->paginate(15);
+                if($request->ajax()){
+                    return view('ajax.orderByPrice-low-high', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'price-high-low'){
+                $allProducts = Products::where('available', '!=', '0')->with(['brandBond'])->groupBy('categoryName')->orderBy('priceShop', 'desc')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajax.orderByPrice-high-low', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'name-a-z'){
+                $allProducts = Products::where('available', '!=', '0')->with(['brandBond'])->groupBy('categoryName')->orderBy('categoryName')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajax.orderByName-a-z', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'name-z-a'){
+                $allProducts = Products::where('available', '!=', '0')->with(['brandBond'])->groupBy('categoryName')->orderBy('categoryName', 'desc')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajax.orderByName-z-a', ['allProducts' => $allProducts, 'selected' => 'selected'])->render();
+                }
+            }
+            if ($request->orderBy == 'default'){
+                $allProducts = Products::where('available', '!=', '0')->with(['brandBond'])->groupBy('categoryName')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajax.orderByDefault', ['allProducts' => $allProducts, 'selected' => 'selected'])->render();
+                }
+            }
+        }else{
+            $allProducts = Products::where('available', '!=', '0')->with(['brandBond'])->groupBy('categoryName')->paginate(15);
+        }
+
+
 
 
         /** Подтягивание и подсчёт товаров с определённым брендом**/

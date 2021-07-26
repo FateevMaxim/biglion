@@ -19,6 +19,10 @@
                                     <a href="/">Главная /</a>
                                 </li>
                                 <li><a href="/Shop">Магазин</a></li>
+                                @if(Request::is('shop/category/*')) <li>/ <a href="/shop/category/">{{$allProducts[0]->categoryBond->category}}</a></li> @endif
+                                @if(Request::is('shop/purpose/*')) <li>/ <a href="/shop/purpose/">{{$allProducts[0]->purposeBond->purpose}}</a></li> @endif
+                                @if(Request::is('shop/brand/*')) <li>/ <a href="/shop/brand/">{{$allProducts[0]->brandBond->brand}}</a></li> @endif
+                                @if(Request::is('shop/taste/*')) <li>/ <a href="/shop/taste/">{{$allProducts[0]->tasteBond->taste}}</a></li> @endif
                             </ul>
                         </div>
                     </div>
@@ -45,7 +49,7 @@
                                         @foreach($purposes as $purpose)
                                             @if($purposeCountFinal[$purpose->purpose] > 0)
                                                 <li>
-                                                    <a href="/shop/purpose/{{ $purpose->id }}">{{ $purpose->purpose }}
+                                                    <a @if("shop/purpose/".$purpose->id == Request::path()) class="text-primary new-price"  @endif href="/shop/purpose/{{ $purpose->id }}">{{ $purpose->purpose }}
                                                         <span>({{ $purposeCountFinal[$purpose->purpose] }})</span>
                                                     </a>
                                                 </li>
@@ -61,7 +65,7 @@
                                         @foreach($categories as $category)
                                             @if($categoryCountFinal[$category->category] > 0)
                                                 <li>
-                                                    <a href="/shop/category/{{ $category->id }}">{{ $category->category }}
+                                                    <a @if("shop/category/".$category->id == Request::path()) class="text-primary new-price"  @endif href="/shop/category/{{ $category->id }}">{{ $category->category }}
                                                         <span>({{ $categoryCountFinal[$category->category] }})</span>
                                                     </a>
                                                 </li>
@@ -77,7 +81,7 @@
                                         @foreach($brands as $brand)
                                             @if($brandCountFinal[$brand->brand] > 0)
                                                 <li>
-                                                    <a href="/shop/brand/{{ $brand->id }}">{{ $brand->brand }}
+                                                    <a @if("shop/brand/".$brand->id == Request::path()) class="text-primary new-price"  @endif href="/shop/brand/{{ $brand->id }}">{{ $brand->brand }}
                                                         <span>({{ $brandCountFinal[$brand->brand] }})</span>
                                                     </a>
                                                 </li>
@@ -95,7 +99,7 @@
                                             @foreach($tastes as $taste)
                                                 @if($tasteCountFinal[$taste->taste] > '0')
                                                     <li>
-                                                        <a href="/shop/taste/{{ $taste->id }}">{{ $taste->taste }}
+                                                        <a @if("shop/taste/".$taste->id == Request::path()) class="text-primary new-price"  @endif href="/shop/taste/{{ $taste->id }}">{{ $taste->taste }}
                                                             <span>({{ $tasteCountFinal[$taste->taste] }})</span>
                                                         </a>
                                                     </li>
@@ -112,6 +116,7 @@
                             @endif
                         </div>
                     </div>
+
                     <div class="col-xl-9 col-lg-8 order-lg-2 order-1">
                         <div class="product-topbar">
                             <ul>
@@ -132,25 +137,29 @@
                                         </li>
                                     </ul>
                                 </li>
-                                {{-- <li class="short">
+                                 <li class="short">
+                                     @php
+                                         $page = Request::get('orderBy');
+                                     @endphp
                                      <select class="nice-select rounded-0">
-                                         <option value="1">По умолчанию</option>
-                                         <option value="2">По популярности</option>
-                                         <option value="3">По рейтингу</option>
-                                         <option value="4">Самые новые</option>
-                                         <option value="5">По возрастающей цене</option>
-                                         <option value="6">По убывающей цене</option>
+                                         <option value="default" @if($page == 'default') selected @endif>По умолчанию</option>
+                                         {{--<option value="2">По популярности</option>--}}
+                                         <option value="name-a-z" @if($page == 'name-a-z') selected @endif>По названию: А-Я</option>
+                                         <option value="name-z-a" @if($page == 'name-z-a') selected @endif>По названию: Я-А</option>
+                                         <option value="price-low-high" @if($page == 'price-low-high') selected @endif>Сначала дешевле</option>
+                                         <option value="price-high-low" @if($page == 'price-high-low') selected @endif>Сначала дороже</option>
                                      </select>
-                                 </li>--}}
+                                 </li>
                             </ul>
                         </div>
-
+                        <div class="wholeShop">
                         <div class="tab-content text-charcoal pt-8">
 
                             <div class="tab-pane fade show active" id="grid-view" role="tabpanel" aria-labelledby="grid-view-tab">
 
                                 <div class="product-grid-view row">
                                     @foreach($allProducts as $product)
+
                                         <div class="col-xl-4 col-sm-4 col-6 pt-6">
                                             <div class="product-item">
                                                 <div class="product-img img-zoom-effect">
@@ -207,15 +216,6 @@
                                                     <div class="price-box pb-1">
                                                         <span class="new-price">₸{{ number_format($product->priceShop, 0, '', ' ') }}</span>
                                                     </div>
-                                                    {{-- <div class="rating-box pb-2">
-                                                        <ul>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>--}}
                                                     <p class="short-desc mb-0">{{ \Illuminate\Support\Str::limit(strip_tags($product->description), 300) }} </p>
                                                     {{--<div class="product-add-action">
                                                         <ul>
@@ -248,15 +248,46 @@
                         @if($allProducts->total() > $allProducts->perPage())
                             <div class="pagination-area pt-10">
                                 <nav aria-label="Page navigation example">
-                                    {{ $allProducts->links() }}
+                                    {{ $allProducts->withQueryString()->links() }}
                                 </nav>
                             </div>
                         @endif
-
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
+@endsection
+
+@section('customJs')
+    <script>
+        $(document).ready(function() {
+            $('.nice-select').change(function() {
+                let orderBy = $(this).val();
+
+                $.ajax({
+                    url: "{{ url(Request::path()) }}",
+                    type: "GET",
+                    data: {
+                        orderBy: orderBy
+                    },
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: (data) => {
+                        let positionParameters = location.pathname.indexOf('?');
+                        let url = location.pathname.substring(positionParameters,location.pathname.length);
+                        let newURL = url + '?';
+                        newURL += 'orderBy=' + orderBy;
+                        history.pushState({}, '', newURL);
+                        $('.wholeShop').html(data),
+                        $('.nice-select').val(orderBy)
+                    }
+                });
+            })
+        })
+    </script>
 
 @endsection

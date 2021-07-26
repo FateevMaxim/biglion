@@ -12,9 +12,45 @@ use Illuminate\Http\Request;
 class ShopFilterController extends Controller
 {
 
-    public function purpose($id)
+    public function purpose(Request $request, $id)
     {
-        $allProducts = Products::where('available', '!=', '0')->where('purpose', $id)->with(['purposeBond'])->groupBy('categoryName')->paginate(15);
+
+        if(isset($request->orderBy)){
+            if ($request->orderBy == 'price-low-high'){
+                $allProducts = Products::where('available', '!=', '0')->where('purpose', $id)->with(['purposeBond'])->groupBy('categoryName')->orderBy('priceShop')->paginate(15);
+                if($request->ajax()){
+                    return view('ajax.orderByPrice-low-high', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'price-high-low'){
+                $allProducts = Products::where('available', '!=', '0')->where('purpose', $id)->with(['purposeBond'])->groupBy('categoryName')->orderBy('priceShop', 'desc')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajax.orderByPrice-high-low', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'name-a-z'){
+                $allProducts = Products::where('available', '!=', '0')->where('purpose', $id)->with(['purposeBond'])->groupBy('categoryName')->orderBy('categoryName')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajax.orderByName-a-z', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'name-z-a'){
+                $allProducts = Products::where('available', '!=', '0')->where('purpose', $id)->with(['purposeBond'])->groupBy('categoryName')->orderBy('categoryName', 'desc')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajax.orderByName-z-a', ['allProducts' => $allProducts, 'selected' => 'selected'])->render();
+                }
+            }
+            if ($request->orderBy == 'default'){
+                $allProducts = Products::where('available', '!=', '0')->where('purpose', $id)->with(['purposeBond'])->groupBy('categoryName')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajax.orderByDefault', ['allProducts' => $allProducts, 'selected' => 'selected'])->render();
+                }
+            }
+        }else{
+                $allProducts = Products::where('available', '!=', '0')->where('purpose', $id)->with(['purposeBond'])->groupBy('categoryName')->paginate(15);
+        }
+
+
         //$allProductsMenu = Products::all();
         $allProductsMenu = Products::select('categoryNutrition', 'brand', 'taste', 'categoryName', 'purpose')->where('available', '!=', '0')->get();
         /** Подтягивание и подсчёт товаров с определённым брендом**/
@@ -69,8 +105,44 @@ class ShopFilterController extends Controller
 
 
 
-    public function category($id){
-        $allProducts = Products::where('available', '!=', '0')->where('categoryNutrition', $id)->with(['categoryBond'])->groupBy('categoryName')->paginate(15);
+    public function category(Request $request, $id){
+
+        if(isset($request->orderBy)){
+            if ($request->orderBy == 'price-low-high'){
+                $allProducts = Products::where('available', '!=', '0')->where('categoryNutrition', $id)->with(['purposeBond'])->groupBy('categoryName')->orderBy('priceShop')->paginate(15);
+                if($request->ajax()){
+                    return view('ajax.orderByPrice-low-high', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'price-high-low'){
+                $allProducts = Products::where('available', '!=', '0')->where('categoryNutrition', $id)->with(['purposeBond'])->groupBy('categoryName')->orderBy('priceShop', 'desc')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajax.orderByPrice-high-low', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'name-a-z'){
+                $allProducts = Products::where('available', '!=', '0')->where('categoryNutrition', $id)->with(['purposeBond'])->groupBy('categoryName')->orderBy('categoryName')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajax.orderByName-a-z', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'name-z-a'){
+                $allProducts = Products::where('available', '!=', '0')->where('categoryNutrition', $id)->with(['purposeBond'])->groupBy('categoryName')->orderBy('categoryName', 'desc')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajax.orderByName-z-a', ['allProducts' => $allProducts, 'selected' => 'selected'])->render();
+                }
+            }
+            if ($request->orderBy == 'default'){
+                $allProducts = Products::where('available', '!=', '0')->where('categoryNutrition', $id)->with(['purposeBond'])->groupBy('categoryName')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajax.orderByDefault', ['allProducts' => $allProducts, 'selected' => 'selected'])->render();
+                }
+            }
+        }else{
+            $allProducts = Products::where('available', '!=', '0')->where('categoryNutrition', $id)->with(['categoryBond'])->groupBy('categoryName')->paginate(15);
+        }
+
+
         $allProductsMenu = Products::select('categoryNutrition', 'brand', 'taste', 'categoryName', 'purpose')->where('available', '!=', '0')->get();
         /** Подтягивание и подсчёт товаров с определённым брендом**/
         $brands = ProductsBrand::all();
@@ -123,8 +195,44 @@ class ShopFilterController extends Controller
 
 
 
-    public function brand($id){
-        $allProducts = Products::where('available', '!=', '0')->where('brand', $id)->with(['brandBond'])->groupBy('categoryName')->paginate(15);
+    public function brand(Request $request, $id){
+
+        if(isset($request->orderBy)){
+            if ($request->orderBy == 'price-low-high'){
+                $allProducts = Products::where('available', '!=', '0')->where('brand', $id)->with(['purposeBond'])->groupBy('categoryName')->orderBy('priceShop')->paginate(15);
+                if($request->ajax()){
+                    return view('ajax.orderByPrice-low-high', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'price-high-low'){
+                $allProducts = Products::where('available', '!=', '0')->where('brand', $id)->with(['purposeBond'])->groupBy('categoryName')->orderBy('priceShop', 'desc')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajax.orderByPrice-high-low', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'name-a-z'){
+                $allProducts = Products::where('available', '!=', '0')->where('brand', $id)->with(['purposeBond'])->groupBy('categoryName')->orderBy('categoryName')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajax.orderByName-a-z', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'name-z-a'){
+                $allProducts = Products::where('available', '!=', '0')->where('brand', $id)->with(['purposeBond'])->groupBy('categoryName')->orderBy('categoryName', 'desc')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajax.orderByName-z-a', ['allProducts' => $allProducts, 'selected' => 'selected'])->render();
+                }
+            }
+            if ($request->orderBy == 'default'){
+                $allProducts = Products::where('available', '!=', '0')->where('brand', $id)->with(['purposeBond'])->groupBy('categoryName')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajax.orderByDefault', ['allProducts' => $allProducts, 'selected' => 'selected'])->render();
+                }
+            }
+        }else{
+            $allProducts = Products::where('available', '!=', '0')->where('brand', $id)->with(['brandBond'])->groupBy('categoryName')->paginate(15);
+        }
+
+
         $allProductsMenu = Products::select('categoryNutrition', 'brand', 'taste', 'categoryName', 'purpose')->where('available', '!=', '0')->get();
         /** Подтягивание и подсчёт товаров с определённым брендом**/
         $brands = ProductsBrand::all();
@@ -176,8 +284,44 @@ class ShopFilterController extends Controller
     }
 
 
-    public function taste($id){
-        $allProducts = Products::where('available', '!=', '0')->where('taste', $id)->with(['tasteBond'])->groupBy('categoryName')->paginate(15);
+    public function taste(Request $request, $id){
+
+        if(isset($request->orderBy)){
+            if ($request->orderBy == 'price-low-high'){
+                $allProducts = Products::where('available', '!=', '0')->where('taste', $id)->with(['purposeBond'])->groupBy('categoryName')->orderBy('priceShop')->paginate(15);
+                if($request->ajax()){
+                    return view('ajax.orderByPrice-low-high', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'price-high-low'){
+                $allProducts = Products::where('available', '!=', '0')->where('taste', $id)->with(['purposeBond'])->groupBy('categoryName')->orderBy('priceShop', 'desc')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajax.orderByPrice-high-low', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'name-a-z'){
+                $allProducts = Products::where('available', '!=', '0')->where('taste', $id)->with(['purposeBond'])->groupBy('categoryName')->orderBy('categoryName')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajax.orderByName-a-z', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'name-z-a'){
+                $allProducts = Products::where('available', '!=', '0')->where('taste', $id)->with(['purposeBond'])->groupBy('categoryName')->orderBy('categoryName', 'desc')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajax.orderByName-z-a', ['allProducts' => $allProducts, 'selected' => 'selected'])->render();
+                }
+            }
+            if ($request->orderBy == 'default'){
+                $allProducts = Products::where('available', '!=', '0')->where('taste', $id)->with(['purposeBond'])->groupBy('categoryName')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajax.orderByDefault', ['allProducts' => $allProducts, 'selected' => 'selected'])->render();
+                }
+            }
+        }else{
+            $allProducts = Products::where('available', '!=', '0')->where('taste', $id)->with(['tasteBond'])->groupBy('categoryName')->paginate(15);
+        }
+
+
         $allProductsMenu = Products::select('categoryNutrition', 'brand', 'taste', 'categoryName', 'purpose')->where('available', '!=', '0')->get();
         /** Подтягивание и подсчёт товаров с определённым брендом**/
         $brands = ProductsBrand::all();

@@ -18,7 +18,7 @@ Route::get('/offer', [IndexController::class, 'offer']);
 Route::get('/details', [IndexController::class, 'details']);
 
 Route::resource('Product', ProductController::class);
-Route::resource('Shop', ShopController::class);
+Route::get('/Shop', [ShopController::class, 'index'])->name('Shop');
 Route::get('/testosterone', [TestosteroneController::class, 'index']);
 Route::get('/testosterone/create', [TestosteroneController::class, 'createTestosterone'])->name('createTestosterone');
 Route::post('/testosterone/store', [TestosteroneController::class, 'storeTestosterone'])->name('storeTestosterone');
