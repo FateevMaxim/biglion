@@ -33,6 +33,9 @@ Route::get('/singleTestosterone/{id}', [SingleProductController::class, 'singleT
 Route::get('/shop/categoryTestosterone/{id}', [TestosteroneFilterController::class, 'categoryTestosterone']);
 Route::get('/shop/subCategoryTestosterone/{id}', [TestosteroneFilterController::class, 'subCategoryTestosterone']);
 Route::get('/shop/brandTestosterone/{id}', [TestosteroneFilterController::class, 'brandTestosterone']);
+Route::get('/delivery', function (){
+    return view('delivery');
+});
 
 Route::get('/login', function () {
     return view('index');

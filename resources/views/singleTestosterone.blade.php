@@ -1,5 +1,11 @@
 @extends('layouts.main', $categoriesTestosterone)
-
+@section('title')
+    Купить {{ $exactProduct[0]->productName }}
+@endsection
+@section('meta')
+    <meta name="description" content="Купить спортивное питание от  Big Lion! У нас самая низкая цена, доставка по Алматы и всему Казахстану. Только качественные препараты напрямую от производителей.">
+    <meta property="og:title" content="Купить спортивное питание от Big Lion, лучшая цена в Алматы, Казахстане!">
+@endsection
 @section('content')
     <main class="main-content">
         <div class="breadcrumb-area breadcrumb-height" data-bg-image="{{ asset('images/breadcrumb/bg/1-1-1920x400-t.jpg') }}">

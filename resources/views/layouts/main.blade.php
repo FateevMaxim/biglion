@@ -108,11 +108,11 @@
                             </ul>
                         </div>
                     </div>
-                    {{--<div class="col-6">
+                    <div class="col-6">
                         <div class="header-top-right text-matterhorn">
-                            <p class="shipping mb-0">Бесплатная доставка от <span>20 000 тенге</span></p>
+                            <i class="fa fa-chevron-right px-2"></i><p class="shipping mb-0"><a href="/delivery">Бесплатная доставка</a> от <span>15 000 тенге</span></p>
                         </div>
-                    </div>--}}
+                    </div>
                 </div>
             </div>
         </div>
@@ -214,11 +214,12 @@
                     <div class="offcanvas-top">
                         <a href="#" class="button-close"><i class="pe-7s-close"></i></a>
                     </div>
-                    {{--<div class="offcanvas-user-info text-center px-6 pb-5">
+                    <div class="offcanvas-user-info text-center px-6 pb-5">
                         <div class=" text-silver">
-                            <p class="shipping mb-0">Бесплатная доставка от <span class="text-primary">20 000 тенге</span></p>
+
+                            <p class="shipping mb-0"><i class="fa fa-chevron-right px-2"></i><a href="/delivery" class="text-decoration-underline">Бесплатная доставка</a> от <span class="text-primary">15 000 тенге</span></p>
                         </div>
-                        <ul class="dropdown-wrap justify-content-center text-silver">
+                       {{-- <ul class="dropdown-wrap justify-content-center text-silver">
                             <li class="dropdown dropup">
                                 <button class="btn btn-link dropdown-toggle ht-btn p-0" type="button" id="settingButtonTwo" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="pe-7s-users"></i>
@@ -248,8 +249,8 @@
                                     <i class="pe-7s-like"></i>
                                 </a>
                             </li>
-                        </ul>
-                    </div>--}}
+                        </ul>--}}
+                    </div>
                     <div class="offcanvas-menu_area">
                         <nav class="offcanvas-navigation">
                             <ul class="mobile-menu">
@@ -383,22 +384,34 @@
                         <div class="widget-item">
                             <h3 class="widget-title mb-5">Продукты</h3>
                             <ul class="widget-list-item">
-                                @if(isset($categories))
+                                @isset($categories)
                                     @foreach($categories as $category)
                                         <li>
                                             <i class="fa fa-chevron-right"></i>
                                             <a href="/shop/category/{{ $category->id }}">{{ $category->category }}</a>
                                         </li>
                                     @endforeach
-                                @endif
-                                @if(isset($categoriesTestosterone))
+                                @endisset
+                                @isset($categoriesTestosterone)
                                     @foreach($categoriesTestosterone as $categoryTestosterone)
                                         <li>
                                             <i class="fa fa-chevron-right"></i>
                                             <a href="/shop/category/{{ $categoryTestosterone->id }}">{{ $categoryTestosterone->main_category }}</a>
                                         </li>
                                     @endforeach
-                                @endif
+                                @endisset
+                                    @empty($categories)
+                                        @empty($categoriesTestosterone)
+                                        <li>
+                                            <i class="fa fa-chevron-right"></i>
+                                            <a href="/Shop">Магазин спортивного питания</a>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-chevron-right"></i>
+                                            <a href="/testosterone">Тестостерон</a>
+                                        </li>
+                                    @endempty
+                                   @endempty
                             </ul>
                         </div>
                     </div>

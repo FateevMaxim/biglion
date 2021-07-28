@@ -3,7 +3,7 @@
     Купить инъекционные стероиды и стероиды в таблетках от официального поставщика! У нас низкая цена, бесплатная доставка по Алматы и всему Казахстану. Только качественные препараты напрямую от производителей. Balkan Pharmaceuticals (балкан фарма), Horizon Pharmaceuticals, Ice Pharmaceuticals
 @endsection
 @section('meta')
-    <meta name="description" content="Купить инъекционные стероиды и стероиды в таблетках от официального поставщика! У нас низкая цена, бесплатная доставка по Алматы и всему Казахстану. Только качественные препараты напрямую от производителей. Balkan Pharmaceuticals (балкан фарма), Horizon Pharmaceuticals, Ice Pharmaceuticals">
+    <meta name="description" content="Купить инъекционные стероиды и стероиды в таблетках от официального поставщика! У нас низкая цена, доставка по Алматы и всему Казахстану. Только качественные препараты напрямую от производителей. Balkan Pharmaceuticals (балкан фарма), Horizon Pharmaceuticals, Ice Pharmaceuticals">
     <meta property="og:title" content="Купить инъекционные стероиды, стероиды в таблетках, самая низкая цена в Алматы, Казахстане! Balkan Pharmaceuticals (балкан фарма), Horizon Pharmaceuticals, Ice Pharmaceuticals">
 @endsection
 @section('content')

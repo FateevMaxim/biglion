@@ -124,8 +124,8 @@
                                 <img src="{{ asset('images/shipping/icon/earphones.png') }}" alt="Shipping Icon">
                             </div>
                             <div class="shipping-content">
-                                <h2 class="title">Бесплатная доставка</h2>
-                                <p class="short-desc mb-0">Предоставляется при покупке на сумму от 20 000 тенге</p>
+                                <h2 class="title"><a href="/delivery" class="text-decoration-underline">Бесплатная доставка</a></h2>
+                                <p class="short-desc mb-0">Предоставляется при покупке на сумму от 15 000 тенге</p>
                             </div>
                         </div>
                     </div>
