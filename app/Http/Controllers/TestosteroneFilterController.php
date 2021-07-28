@@ -11,8 +11,44 @@ use Illuminate\Http\Request;
 class TestosteroneFilterController extends Controller
 {
 
-    public function categoryTestosterone($id){
-        $allProducts = Testosterone::where('available', '!=', '0')->where('mainCategory', $id)->with(['mainCategoryBond'])->groupBy('productName')->paginate(15);
+    public function categoryTestosterone(Request $request, $id){
+
+        if(isset($request->orderBy)){
+            if ($request->orderBy == 'price-low-high'){
+                $allProducts = Testosterone::where('available', '!=', '0')->where('mainCategory', $id)->with(['mainCategoryBond'])->groupBy('productName')->orderBy('priceShop')->paginate(15);
+                if($request->ajax()){
+                    return view('ajaxTestosterone.orderByPrice-low-high', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'price-high-low'){
+                $allProducts = Testosterone::where('available', '!=', '0')->where('mainCategory', $id)->with(['mainCategoryBond'])->groupBy('productName')->orderBy('priceShop', 'desc')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajaxTestosterone.orderByPrice-high-low', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'name-a-z'){
+                $allProducts = Testosterone::where('available', '!=', '0')->where('mainCategory', $id)->with(['mainCategoryBond'])->groupBy('productName')->orderBy('productName')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajaxTestosterone.orderByName-a-z', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'name-z-a'){
+                $allProducts = Testosterone::where('available', '!=', '0')->where('mainCategory', $id)->with(['mainCategoryBond'])->groupBy('productName')->orderBy('productName', 'desc')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajaxTestosterone.orderByName-z-a', ['allProducts' => $allProducts, 'selected' => 'selected'])->render();
+                }
+            }
+            if ($request->orderBy == 'default'){
+                $allProducts = Testosterone::where('available', '!=', '0')->where('mainCategory', $id)->with(['mainCategoryBond'])->groupBy('productName')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajaxTestosterone.orderByDefault', ['allProducts' => $allProducts, 'selected' => 'selected'])->render();
+                }
+            }
+        }else{
+            $allProducts = Testosterone::where('available', '!=', '0')->where('mainCategory', $id)->with(['mainCategoryBond'])->groupBy('productName')->paginate(15);
+        }
+
+
         $allProductsMenu = Testosterone::select('mainCategory', 'brand', 'productName', 'subCategory')->where('available', '!=', '0')->get();
         /** Подтягивание и подсчёт товаров с определённым брендом**/
         $brands = TestosteroneBrand::all();
@@ -49,8 +85,49 @@ class TestosteroneFilterController extends Controller
         //dd(@$allProducts);
         return view('testosterone', compact( 'allProducts', 'brands', 'brandCountFinal', 'mainCategories', 'categoryCountFinal', 'categoriesTestosterone', 'subCategories', 'subCategoryCountFinal'));
     }
-    public function subCategoryTestosterone($id){
-        $allProducts = Testosterone::where('available', '!=', '0')->where('subCategory', $id)->with(['subCategoryBond'])->groupBy('productName')->paginate(15);
+
+
+
+
+
+    public function subCategoryTestosterone(Request $request, $id){
+
+        if(isset($request->orderBy)){
+            if ($request->orderBy == 'price-low-high'){
+                $allProducts = Testosterone::where('available', '!=', '0')->where('subCategory', $id)->with(['subCategoryBond'])->groupBy('productName')->orderBy('priceShop')->paginate(15);
+                if($request->ajax()){
+                    return view('ajaxTestosterone.orderByPrice-low-high', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'price-high-low'){
+                $allProducts = Testosterone::where('available', '!=', '0')->where('subCategory', $id)->with(['subCategoryBond'])->groupBy('productName')->orderBy('priceShop', 'desc')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajaxTestosterone.orderByPrice-high-low', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'name-a-z'){
+                $allProducts = Testosterone::where('available', '!=', '0')->where('subCategory', $id)->with(['subCategoryBond'])->groupBy('productName')->orderBy('productName')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajaxTestosterone.orderByName-a-z', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'name-z-a'){
+                $allProducts = Testosterone::where('available', '!=', '0')->where('subCategory', $id)->with(['subCategoryBond'])->groupBy('productName')->orderBy('productName', 'desc')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajaxTestosterone.orderByName-z-a', ['allProducts' => $allProducts, 'selected' => 'selected'])->render();
+                }
+            }
+            if ($request->orderBy == 'default'){
+                $allProducts = Testosterone::where('available', '!=', '0')->where('subCategory', $id)->with(['subCategoryBond'])->groupBy('productName')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajaxTestosterone.orderByDefault', ['allProducts' => $allProducts, 'selected' => 'selected'])->render();
+                }
+            }
+        }else{
+            $allProducts = Testosterone::where('available', '!=', '0')->where('subCategory', $id)->with(['subCategoryBond'])->groupBy('productName')->paginate(15);
+        }
+
+
         $allProductsMenu = Testosterone::select('mainCategory', 'brand', 'productName', 'subCategory')->where('available', '!=', '0')->get();
         /** Подтягивание и подсчёт товаров с определённым брендом**/
         $brands = TestosteroneBrand::all();
@@ -90,8 +167,44 @@ class TestosteroneFilterController extends Controller
 
 
 
-    public function brandTestosterone($id){
-        $allProducts = Testosterone::where('available', '!=', '0')->where('brand', $id)->with(['testosteroneBrandBond'])->groupBy('productName')->paginate(15);
+    public function brandTestosterone(Request $request, $id){
+
+        if(isset($request->orderBy)){
+            if ($request->orderBy == 'price-low-high'){
+                $allProducts = Testosterone::where('available', '!=', '0')->where('brand', $id)->with(['testosteroneBrandBond'])->groupBy('productName')->orderBy('priceShop')->paginate(15);
+                if($request->ajax()){
+                    return view('ajaxTestosterone.orderByPrice-low-high', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'price-high-low'){
+                $allProducts = Testosterone::where('available', '!=', '0')->where('brand', $id)->with(['testosteroneBrandBond'])->groupBy('productName')->orderBy('priceShop', 'desc')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajaxTestosterone.orderByPrice-high-low', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'name-a-z'){
+                $allProducts = Testosterone::where('available', '!=', '0')->where('brand', $id)->with(['testosteroneBrandBond'])->groupBy('productName')->orderBy('productName')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajaxTestosterone.orderByName-a-z', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'name-z-a'){
+                $allProducts = Testosterone::where('available', '!=', '0')->where('brand', $id)->with(['testosteroneBrandBond'])->groupBy('productName')->orderBy('productName', 'desc')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajaxTestosterone.orderByName-z-a', ['allProducts' => $allProducts, 'selected' => 'selected'])->render();
+                }
+            }
+            if ($request->orderBy == 'default'){
+                $allProducts = Testosterone::where('available', '!=', '0')->where('brand', $id)->with(['testosteroneBrandBond'])->groupBy('productName')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajaxTestosterone.orderByDefault', ['allProducts' => $allProducts, 'selected' => 'selected'])->render();
+                }
+            }
+        }else{
+            $allProducts = Testosterone::where('available', '!=', '0')->where('brand', $id)->with(['testosteroneBrandBond'])->groupBy('productName')->paginate(15);
+        }
+
+
         $allProductsMenu = Testosterone::select('mainCategory', 'brand', 'subCategory', 'productName')->where('available', '!=', '0')->get();
         /** Подтягивание и подсчёт товаров с определённым брендом**/
         $brands = TestosteroneBrand::all();

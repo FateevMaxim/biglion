@@ -21,6 +21,9 @@
                                 <li>
                                     <a href="/testosterone">Тестостерон</a>
                                 </li>
+                                @if(Request::is('shop/categoryTestosterone/*')) <li>/ <a href="shop/categoryTestosterone/">{{$allProducts[0]->mainCategoryBond->main_category}}</a></li> @endif
+                                @if(Request::is('shop/subCategoryTestosterone/*')) <li>/ <a href="shop/subCategoryTestosterone/">{{$allProducts[0]->subCategoryBond->sub_category}}</a></li> @endif
+                                @if(Request::is('shop/brandTestosterone/*')) <li>/ <a href="shop/brandTestosterone/">{{$allProducts[0]->testosteroneBrandBond->brand}}</a></li> @endif
                             </ul>
                         </div>
                     </div>
@@ -47,7 +50,7 @@
                                         @foreach($mainCategories as $category)
                                             @if($categoryCountFinal[$category->main_category] > 0)
                                                 <li>
-                                                    <a href="/shop/categoryTestosterone/{{ $category->id }}">{{ $category->main_category }}
+                                                    <a @if("shop/categoryTestosterone/".$category->id == Request::path()) class="text-primary new-price"  @endif href="/shop/categoryTestosterone/{{ $category->id }}">{{ $category->main_category }}
                                                         <span>({{ $categoryCountFinal[$category->main_category] }})</span>
                                                     </a>
                                                 </li>
@@ -63,7 +66,7 @@
                                         @foreach($subCategories as $subCategory)
                                             @if($subCategoryCountFinal[$subCategory->sub_category] > 0)
                                                 <li>
-                                                    <a href="/shop/subCategoryTestosterone/{{ $subCategory->id }}">{{ $subCategory->sub_category }}
+                                                    <a @if("shop/subCategoryTestosterone/".$subCategory->id == Request::path()) class="text-primary new-price"  @endif href="/shop/subCategoryTestosterone/{{ $subCategory->id }}">{{ $subCategory->sub_category }}
                                                         <span>({{ $subCategoryCountFinal[$subCategory->sub_category] }})</span>
                                                     </a>
                                                 </li>
@@ -79,7 +82,7 @@
                                         @foreach($brands as $brand)
                                             @if($brandCountFinal[$brand->brand] > 0)
                                                 <li>
-                                                    <a href="/shop/brandTestosterone/{{ $brand->id }}">{{ $brand->brand }}
+                                                    <a @if("shop/brandTestosterone/".$brand->id == Request::path()) class="text-primary new-price"  @endif href="/shop/brandTestosterone/{{ $brand->id }}">{{ $brand->brand }}
                                                         <span>({{ $brandCountFinal[$brand->brand] }})</span>
                                                     </a>
                                                 </li>
@@ -116,19 +119,22 @@
                                         </li>
                                     </ul>
                                 </li>
-                                {{--<li class="short">
+                                <li class="short">
+                                    @php
+                                        $page = Request::get('orderBy');
+                                    @endphp
                                     <select class="nice-select rounded-0">
-                                        <option value="1">По умолчанию</option>
-                                        <option value="2">По популярности</option>
-                                        <option value="3">По рейтингу</option>
-                                        <option value="4">Самые новые</option>
-                                        <option value="5">По возрастающей цене</option>
-                                        <option value="6">По убывающей цене</option>
+                                        <option value="default" @if($page == 'default') selected @endif>По умолчанию</option>
+                                        {{--<option value="2">По популярности</option>--}}
+                                        <option value="name-a-z" @if($page == 'name-a-z') selected @endif>По названию: А-Я</option>
+                                        <option value="name-z-a" @if($page == 'name-z-a') selected @endif>По названию: Я-А</option>
+                                        <option value="price-low-high" @if($page == 'price-low-high') selected @endif>Сначала дешевле</option>
+                                        <option value="price-high-low" @if($page == 'price-high-low') selected @endif>Сначала дороже</option>
                                     </select>
-                                </li>--}}
+                                </li>
                             </ul>
                         </div>
-
+                        <div class="wholeShop pb-5">
                         <div class="tab-content text-charcoal pt-8">
 
                             <div class="tab-pane fade show active" id="grid-view" role="tabpanel" aria-labelledby="grid-view-tab">
@@ -221,6 +227,7 @@
                             </div>
 
                         </div>
+                        </div>
                         @if($allProducts->total() > $allProducts->perPage())
                             <div class="pagination-area pt-10">
                                 <nav aria-label="Page navigation example">
@@ -234,5 +241,34 @@
             </div>
         </div>
     </main>
+
+@endsection
+@section('customJs')
+    <script>
+        $(document).ready(function() {
+            $('.nice-select').change(function() {
+                let orderBy = $(this).val();
+
+                $.ajax({
+                    url: "{{ url(Request::path()) }}",
+                    type: "GET",
+                    data: {
+                        orderBy: orderBy
+                    },
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: (data) => {
+                        let positionParameters = location.pathname.indexOf('?');
+                        let url = location.pathname.substring(positionParameters,location.pathname.length);
+                        let newURL = url + '?';
+                        newURL += 'orderBy=' + orderBy;
+                        history.pushState({}, '', newURL);
+                        $('.wholeShop').html(data)
+                    }
+                });
+            })
+        })
+    </script>
 
 @endsection

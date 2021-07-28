@@ -12,10 +12,46 @@ use Illuminate\Support\Str;
 
 class TestosteroneController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $items = new Testosterone();
-        $allProducts = Testosterone::where('available', '!=', '0')->with(['testosteroneBrandBond'])->groupBy('productName')->paginate(15);
+
+        if(isset($request->orderBy)){
+            if ($request->orderBy == 'price-low-high'){
+                $allProducts = Testosterone::where('available', '!=', '0')->with(['testosteroneBrandBond'])->groupBy('productName')->orderBy('priceShop')->paginate(15);
+                if($request->ajax()){
+                    return view('ajaxTestosterone.orderByPrice-low-high', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'price-high-low'){
+                $allProducts = Testosterone::where('available', '!=', '0')->with(['testosteroneBrandBond'])->groupBy('productName')->orderBy('priceShop', 'desc')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajaxTestosterone.orderByPrice-high-low', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'name-a-z'){
+                $allProducts = Testosterone::where('available', '!=', '0')->with(['testosteroneBrandBond'])->groupBy('productName')->orderBy('productName')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajaxTestosterone.orderByName-a-z', ['allProducts' => $allProducts])->render();
+                }
+            }
+            if ($request->orderBy == 'name-z-a'){
+                $allProducts = Testosterone::where('available', '!=', '0')->with(['testosteroneBrandBond'])->groupBy('productName')->orderBy('productName', 'desc')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajaxTestosterone.orderByName-z-a', ['allProducts' => $allProducts, 'selected' => 'selected'])->render();
+                }
+            }
+            if ($request->orderBy == 'default'){
+                $allProducts = Testosterone::where('available', '!=', '0')->with(['testosteroneBrandBond'])->groupBy('productName')->paginate(15);
+                if($request->ajax()) {
+                    return view('ajaxTestosterone.orderByDefault', ['allProducts' => $allProducts, 'selected' => 'selected'])->render();
+                }
+            }
+        }else{
+            $allProducts = Testosterone::where('available', '!=', '0')->with(['testosteroneBrandBond'])->groupBy('productName')->paginate(15);
+        }
+
+
         $allProductsMenu = Testosterone::all()->where('available', '!=', '0');
 
 
