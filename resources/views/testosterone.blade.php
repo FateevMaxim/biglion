@@ -227,15 +227,15 @@
                             </div>
 
                         </div>
-                        </div>
+
                         @if($allProducts->total() > $allProducts->perPage())
                             <div class="pagination-area pt-10">
                                 <nav aria-label="Page navigation example">
-                                    {{ $allProducts->links() }}
+                                    {{ $allProducts->withQueryString()->links() }}
                                 </nav>
                             </div>
                         @endif
-
+                    </div>
                     </div>
                 </div>
             </div>
