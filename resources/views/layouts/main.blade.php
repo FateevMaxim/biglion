@@ -28,7 +28,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="{{asset('images/favicon/ms-icon-144x144.png')}}">
     <meta name="theme-color" content="#ffffff">
-
+    <meta name="yandex-verification" content="4aeef78399199a94" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- CSS
     ============================================ -->
