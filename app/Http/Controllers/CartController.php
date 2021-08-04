@@ -167,7 +167,7 @@ class CartController extends Controller
                 $orderData['slug'] = $cartProduct->name;
                 $orderData['quantity'] = $cartProduct->qty;
                 $orderData['price'] = $cartProduct->price;
-                $orderData['paymentStatus'] = "0";
+                $orderData['paymentStatus'] = "3";
                 $orderData['payment_method'] = "Курьеру";
                 $orderData['order_sig'] = $order_sig;
                 $orderData['order_id'] = $t;
@@ -176,6 +176,7 @@ class CartController extends Controller
                 $saveOrderData->save();
             }
             Cart::destroy();
+
             return redirect()->route('cart')->with('message', 'Успешное оформление заказа!');
         }
 
@@ -209,6 +210,7 @@ class CartController extends Controller
         $html = curl_exec($ch);
         curl_close($ch);
         $responceUrl = simplexml_load_string($html);
+
 
         return view('cart', compact('categories', 'responceUrl'));
     }

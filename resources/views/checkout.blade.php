@@ -13,7 +13,7 @@
             <div class="container h-100">
                 <div class="row h-100">
                     <div class="col-lg-12">
-                        <div class="breadcrumb-item text-night-rider">
+                        <div class="breadcrumb-item text-white">
                             <h2 class="breadcrumb-heading">Страница оплаты</h2>
                             <ul>
                                 <li>
