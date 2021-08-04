@@ -145,7 +145,7 @@
 	/* --- Product Slider--- */
 	if($('.product-slider').elExists()){
 		var mySwiper = new Swiper('.product-slider', {
-			slidesPerView: 4,
+			slidesPerView: 1,
 			spaceBetween: 30,
 			loop: true,
 			navigation: {
@@ -795,7 +795,7 @@
 	/*----------------------------------------*/
 	/*  QTY Button
 /*----------------------------------------*/
-	$('.cart-plus-minus').append(
+	/*$('.cart-plus-minus').append(
 		'<div class="dec qtybutton"><i class="fa fa-minus"></i></div><div class="inc qtybutton"><i class="fa fa-plus"></i></div>'
 	);
 	$('.qtybutton').on('click', function () {
@@ -812,14 +812,14 @@
 			}
 		}
 		$button.parent().find('input').val(newVal);
-	});
+	});*/
 
 	/*----------------------------------------*/
 	/*  Nice Select
 /*----------------------------------------*/
-	if ($('.nice-select').elExists()) {
+	/*if ($('.nice-select').elExists()) {
 		$('.nice-select').niceSelect();
-	}
+	}*/
 	
 	/*--------------------------------
     Ajax Contact Form

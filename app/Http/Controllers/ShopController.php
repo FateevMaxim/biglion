@@ -7,6 +7,7 @@ use App\Models\ProductsBrand;
 use App\Models\ProductsCategories;
 use App\Models\ProductsPurpose;
 use App\Models\ProductsTaste;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Symfony\Component\HttpKernel\Profiler\Profile;
@@ -99,8 +100,11 @@ class ShopController extends Controller
 
         }
         /** Конец Подтягивание и подсчёт товаров с определённой целью**/
+
+
+        $cart = Cart::content();
         //dd(@$allProducts);
-        return view('shop', compact( 'allProducts', 'brands', 'brandCountFinal', 'categories', 'categoryCountFinal', 'purposes', 'purposeCountFinal'));
+        return view('shop', compact( 'allProducts', 'brands', 'brandCountFinal', 'categories', 'categoryCountFinal', 'purposes', 'purposeCountFinal', 'cart'));
     }
 
     /**

@@ -73,30 +73,7 @@
                             <div class="price-box pb-3">
                                 <span class="new-price text-danger">₸{{ number_format($exactProduct[0]->priceShop, 0, '', ' ') }}</span>
                             </div>
-                            <div class="selector-wrap color-option pb-55">
-                                <span class="selector-title">Вкус</span>
-                                <select class="nice-select wide rounded-0">
-
-                                    @foreach($customTasteProduct as $taste)
-                                        <option value="{{$taste->taste}}">{{$taste->tasteBond->taste}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            {{--<ul class="quantity-with-btn pb-9">
-                                <li class="quantity">
-                                    <div class="cart-plus-minus">
-                                        <input class="cart-plus-minus-box" value="1" type="text">
-                                    </div>
-                                </li>
-                                <li class="add-to-cart">
-                                    <a class="btn btn-custom-size lg-size btn-primary" href="#">В корзину</a>
-                                </li>
-                                <li class="wishlist-btn-wrap">
-                                    <a class="custom-circle-btn" href="wishlist.html">
-                                        <i class="pe-7s-like"></i>
-                                    </a>
-                                </li>
-                            </ul>--}}
+                                    @livewire('products-table', ['product_id' => $exactProduct[0]->id, 'product_slug' =>$exactProduct[0]->slug, 'categoryName' =>$exactProduct[0]->categoryName ])
                             <div class="product-category pb-3">
                                 <span class="title">Категория :</span>
                                 <ul>
@@ -105,6 +82,7 @@
                                     </li>
                                 </ul>
                             </div>
+
                             <div class="product-category product-tags pb-3">
                                 <span class="title">Цель :</span>
                                 <ul>
@@ -143,7 +121,7 @@
                 </div>
             </div>
         </div>
-        <div class="product-tab-area section-space-y-axis-100">
+        <div class="product-tab-area mt-4">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -233,63 +211,69 @@
                             </div>--}}
                         </div>
                     </div>
+                    <div class="col-lg-6 col-md-8 col-12 pt-5 single-product-content">
+                        @livewire('products-table', ['product_id' => $exactProduct[0]->id, 'product_slug' =>$exactProduct[0]->slug, 'categoryName' =>$exactProduct[0]->categoryName ])
+                    </div>
                 </div>
             </div>
         </div>
-        {{--<div class="background-img" data-bg-image="assets/images/background-img/1-2-1920x716.jpg">
-            <div class="product-area product-arrow section-space-y-axis-100">
+        <div class="background-img" data-bg-image="{{ asset('images/background-img/1-2-1920x716.jpg') }}">
+            <div class="product-area product-arrow mb-5 pt-4 pb-8">
                 <div class="container">
                     <div class="section-title pb-55">
                         <h2 class="title mb-0">Похожие товары</h2>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="swiper-container product-slider">
-                                <div class="swiper-wrapper text-heading">
-                                    <div class="swiper-slide">
-                                        <div class="product-item">
-                                            <div class="product-img img-zoom-effect">
-                                                <a href="shop.html">
-                                                    <img class="img-full" src="assets/images/product/medium-size/product-slider/1-1-290x350.jpg" alt="Product Images">
-                                                </a>
-                                            </div>
-                                            <div class="product-content">
-                                                <a class="product-name pb-1" href="shop.html">BSN True Mass 1200, 4.65 кг.</a>
-                                                <div class="price-box">
-                                                    <div class="price-box-holder">
-                                                        <span>Цена:</span>
-                                                        <span class="new-price text-primary">₸29 000</span>
+
+                                    @foreach($relatedProducts as $related)
+                                        {{--<div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3" style="width: 297.5px; margin-right: 30px;" role="group" aria-label="12 / 12">
+                                            <div class="product-item">
+                                                <div class="product-img img-zoom-effect">
+                                                            <a href="/singleProduct/{{ $related->id }}">
+                                                                <img class="img-full" src="{{ asset('storage/'.$related->avatar)}}" alt="{{ $related->categoryName }}">
+                                                            </a>
+                                                </div>
+                                                <div class="product-content">
+                                                            <a class="product-name pb-1" href="/singleProduct/{{ $related->id }}">{{ $related->brandBond->brand }} {{ $related->categoryName }} {{ $related->weight }}</a>
+                                                            <div class="price-box">
+                                                                <div class="price-box-holder">
+                                                                    <span>Цена:</span>
+                                                                    <span class="new-price text-primary">₸{{ number_format($related->priceShop, 0, '', ' ') }}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="product-add-action">
-                                                    <ul>
-                                                        <li>
-                                                            <a href="#" data-tippy="Добавить в корзину" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                                <i class="pe-7s-cart"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li class="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                                                            <a href="#" data-tippy="Быстрый просмотр" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                                <i class="pe-7s-look"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="wishlist.html" data-tippy="Сохранить на будущее" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                                <i class="pe-7s-like"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="compare.html" data-tippy="Добавить в сравнение" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                                <i class="pe-7s-shuffle"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                                </div>--}}
+                                    @endforeach
+
+
+                                        <div class="swiper-container product-slider swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
+                                            <div class="swiper-wrapper text-heading" id="swiper-wrapper-78910282a1a775d29" aria-live="polite" style="transition-duration: 0ms; transform: translate3d(-1310px, 0px, 0px);">
+                                                @foreach($relatedProducts as $related)
+                                                    <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="{{ $related->id }}" style="width: 297.5px; margin-right: 30px;" role="group" aria-label="5 / 12">
+                                                        <div class="product-item">
+                                                            <div class="product-img img-zoom-effect">
+                                                                <a href="/singleProduct/{{ $related->id }}">
+                                                                    <img class="img-full" src="{{ asset('storage/'.$related->avatar)}}" alt="{{ $related->categoryName }}">
+                                                                </a>
+                                                            </div>
+                                                            <div class="product-content">
+                                                                <a class="product-name pb-1" href="/singleProduct/{{ $related->id }}">{{ $related->brandBond->brand }} {{ $related->categoryName }} {{ $related->weight }}</a>
+                                                                <div class="price-box">
+                                                                    <div class="price-box-holder">
+                                                                        <span>Цена:</span>
+                                                                        <span class="new-price text-primary">₸{{ number_format($related->priceShop, 0, '', ' ') }}</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+
+
                             <!-- Add Arrows -->
                             <div class="product-button-wrap pt-10">
                                 <div class="product-button-prev">
@@ -303,6 +287,6 @@
                     </div>
                 </div>
             </div>
-        </div>--}}
+        </div>
     </main>
 @endsection

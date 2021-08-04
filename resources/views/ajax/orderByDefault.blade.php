@@ -12,32 +12,14 @@
                             </a>
                         </div>
                         <div class="product-content">
-                            <a class="product-name pb-1" href="/singleProduct/{{ $product->id }}">{{ $product->brandBond->brand }} {{ $product->categoryName }}{{ $selected }} {{ $product->weight }}</a>
+                            <a class="product-name pb-1" href="/singleProduct/{{ $product->id }}">{{ $product->brandBond->brand }} {{ $product->categoryName }} {{ $product->weight }}</a>
                             <div class="price-box">
                                 <div class="price-box-holder">
                                     <span>Цена:</span>
                                     <span class="new-price text-primary">₸{{ number_format($product->priceShop, 0, '', ' ') }}</span>
                                 </div>
                             </div>
-                            {{--<div class="product-add-action">
-                                <ul>
-                                    <li>
-                                        <a href="#" data-tippy="Добавить в корзину" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                            <i class="pe-7s-cart"></i>
-                                        </a>
-                                    </li>
-                                    <li class="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                                        <a href="#" data-tippy="Быстрый просмотр" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                            <i class="pe-7s-look"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="wishlist.html" data-tippy="Сохранить на будущее" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                            <i class="pe-7s-like"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>--}}
+                            @livewire('show-shop', ['product_slug' => $product->slug])
                         </div>
                     </div>
                 </div>

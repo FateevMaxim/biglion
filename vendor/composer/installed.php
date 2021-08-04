@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '937fe760de086d6ebfbe20357cbfbabebea393a8',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -53,6 +53,15 @@
             'install_path' => __DIR__ . '/../brick/math',
             'aliases' => array(),
             'reference' => 'dff976c2f3487d42c1db75a3b180e2b9f0e72ce0',
+            'dev_requirement' => false,
+        ),
+        'bumbummen99/shoppingcart' => array(
+            'pretty_version' => '4.0.0',
+            'version' => '4.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../bumbummen99/shoppingcart',
+            'aliases' => array(),
+            'reference' => 'f2c763e311b0fc58b2dfdfa2c41c6318a7c884e1',
             'dev_requirement' => false,
         ),
         'composer/ca-bundle' => array(
@@ -539,12 +548,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '937fe760de086d6ebfbe20357cbfbabebea393a8',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -590,6 +599,15 @@
             'install_path' => __DIR__ . '/../league/mime-type-detection',
             'aliases' => array(),
             'reference' => '3b9dff8aaf7323590c1d2e443db701eb1f9aa0d3',
+            'dev_requirement' => false,
+        ),
+        'livewire/livewire' => array(
+            'pretty_version' => 'v2.5.5',
+            'version' => '2.5.5.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../livewire/livewire',
+            'aliases' => array(),
+            'reference' => 'de192292d68276d831e5fd9824c80c3b78a21ddf',
             'dev_requirement' => false,
         ),
         'maximebf/debugbar' => array(

@@ -109,9 +109,9 @@
                                     </div>
                                 </div>
                             @endif
-                            @if(Route::current()->getName() != 'Shop.index')
+                            @if(Route::current()->getName() != 'Shop')
                                 <div class="widgets-area mb-5 text-center">
-                                    <a href="/Shop"><button type="button" class="btn btn-primary">Показать всё</button></a>
+                                    <a href="{{ route('Shop') }}"><button type="button" class="btn btn-primary">Показать всё</button></a>
                                 </div>
                             @endif
                         </div>
@@ -154,9 +154,7 @@
                         </div>
                         <div class="wholeShop pb-5">
                         <div class="tab-content text-charcoal pt-8">
-
                             <div class="tab-pane fade show active" id="grid-view" role="tabpanel" aria-labelledby="grid-view-tab">
-
                                 <div class="product-grid-view row">
                                     @foreach($allProducts as $product)
 
@@ -164,7 +162,7 @@
                                             <div class="product-item">
                                                 <div class="product-img img-zoom-effect">
                                                     <a href="/singleProduct/{{ $product->id }}">
-                                                        <img class="img-full" src="{{ asset('storage/'.$product->avatar)}}" alt="Product Images">
+                                                        <img class="img-full" src="{{ asset('storage/'.$product->avatar)}}" alt="{{ $product->categoryName }}">
                                                     </a>
                                                 </div>
                                                 <div class="product-content">
@@ -175,25 +173,7 @@
                                                             <span class="new-price text-primary">₸{{ number_format($product->priceShop, 0, '', ' ') }}</span>
                                                         </div>
                                                     </div>
-                                                    {{--<div class="product-add-action">
-                                                        <ul>
-                                                            <li>
-                                                                <a href="#" data-tippy="Добавить в корзину" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                                    <i class="pe-7s-cart"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li class="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                                                                <a href="#" data-tippy="Быстрый просмотр" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                                    <i class="pe-7s-look"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="wishlist.html" data-tippy="Сохранить на будущее" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                                    <i class="pe-7s-like"></i>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>--}}
+                                                    @livewire('show-shop', ['product_slug' => $product->slug])
                                                 </div>
                                             </div>
                                         </div>
@@ -217,14 +197,14 @@
                                                         <span class="new-price">₸{{ number_format($product->priceShop, 0, '', ' ') }}</span>
                                                     </div>
                                                     <p class="short-desc mb-0">{{ \Illuminate\Support\Str::limit(strip_tags($product->description), 300) }} </p>
-                                                    {{--<div class="product-add-action">
+                                                    <div class="product-add-action">
                                                         <ul>
                                                             <li>
                                                                 <a href="#" data-tippy="Добавить в корзину" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
                                                                     <i class="pe-7s-cart"></i>
                                                                 </a>
                                                             </li>
-                                                            <li class="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
+                                                            {{--<li class="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
                                                                 <a href="#" data-tippy="Быстрый просмотр" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
                                                                     <i class="pe-7s-look"></i>
                                                                 </a>
@@ -233,9 +213,9 @@
                                                                 <a href="wishlist.html" data-tippy="Сохранить на будущее" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
                                                                     <i class="pe-7s-like"></i>
                                                                 </a>
-                                                            </li>
+                                                            </li>--}}
                                                         </ul>
-                                                    </div>--}}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

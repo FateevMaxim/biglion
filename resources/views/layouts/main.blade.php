@@ -45,6 +45,7 @@
     <link rel="stylesheet" href="{{asset('css/plugins/magnific-popup.min.css')}}" />
     <link rel="stylesheet" href="{{asset('css/plugins/ion.rangeSlider.min.css')}}" />
 
+    @livewireStyles
     <!-- Minify Version -->
     <!-- <link rel="stylesheet" href="assets/css/vendor/vendor.min.css"> -->
     <!-- <link rel="stylesheet" href="assets/css/plugins/plugins.min.css"> -->
@@ -189,13 +190,8 @@
                                         <a href="wishlist.html">
                                             <i class="pe-7s-like"></i>
                                         </a>
-                                    </li>
-                                    <li class="minicart-wrap me-3 me-lg-0">
-                                        <a href="#miniCart" class="minicart-btn toolbar-btn">
-                                            <i class="pe-7s-shopbag"></i>
-                                            <span class="quantity">1</span>
-                                        </a>
                                     </li>--}}
+                                    @livewire('cart-counter')
                                     <li class="mobile-menu_wrap d-block d-lg-none">
                                         <a href="#mobileMenu" class="mobile-menu_btn toolbar-btn pl-0">
                                             <i class="pe-7s-menu"></i>
@@ -307,35 +303,7 @@
             </div>
         </div>
         <div class="offcanvas-minicart_wrapper" id="miniCart">
-            <div class="offcanvas-body">
-                <div class="minicart-content">
-                    <div class="minicart-heading">
-                        <h4 class="mb-0">Список покупок</h4>
-                        <a href="#" class="button-close"><i class="pe-7s-close" data-tippy="Закрыть" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder"></i></a>
-                    </div>
-                    <ul class="minicart-list">
-                        <li class="minicart-product">
-                            <a class="product-item_remove" href="#"><i
-                                        class="pe-7s-trash" data-tippy="Хотите удалить?" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder"></i></a>
-                            <a href="shop.html" class="product-item_img">
-                                <img class="img-full" src="{{asset("images/product/small-size/1-1-70x70.png")}}" alt="Product Image">
-                            </a>
-                            <div class="product-item_content">
-                                <a class="product-item_title" href="shop.html">BSN Amino X</a>
-                                <span class="product-item_quantity">1 x 18000.00 тенге</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="minicart-item_total">
-                    <span>Итог</span>
-                    <span class="ammount">18000.00 тенге</span>
-                </div>
-                <div class="group-btn_wrap d-grid gap-2">
-                    <a href="cart.html" class="btn btn-dark btn-primary-hover">Посмотреть корзину</a>
-                    <a href="checkout.html" class="btn btn-dark btn-primary-hover">Оплатить</a>
-                </div>
-            </div>
+                @livewire('show-in-cart')
         </div>
         <div class="global-overlay"></div>
     </header>
@@ -489,12 +457,11 @@
 <script src="{{asset('js/vendor/jquery-3.6.0.min.js')}}"></script>
 <script src="{{asset('js/vendor/jquery-migrate-3.3.2.min.js')}}"></script>
 <script src="{{asset('js/vendor/modernizr-3.11.2.min.js')}}"></script>
-
+@livewireScripts
 <!--Plugins JS-->
 <script src="{{asset('js/plugins/wow.min.js')}}"></script>
 <script src="{{asset('js/plugins/jquery-ui.min.js')}}"></script>
 <script src="{{asset('js/plugins/swiper-bundle.min.js')}}"></script>
-<script src="{{asset('js/plugins/jquery.nice-select.js')}}"></script>
 <script src="{{asset('js/plugins/parallax.min.js')}}"></script>
 <script src="{{asset('js/plugins/jquery.magnific-popup.min.js')}}"></script>
 <script src="{{asset('js/plugins/tippy.min.js')}}"></script>

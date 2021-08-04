@@ -35,6 +35,7 @@ final class Versions
     const VERSIONS          = array (
   'asm89/stack-cors' => 'v2.0.3@9cb795bf30988e8c96dd3c40623c48a877bc6714',
   'brick/math' => '0.9.2@dff976c2f3487d42c1db75a3b180e2b9f0e72ce0',
+  'bumbummen99/shoppingcart' => '4.0.0@f2c763e311b0fc58b2dfdfa2c41c6318a7c884e1',
   'doctrine/inflector' => '2.0.3@9cf661f4eb38f7c881cac67c75ea9b00bf97b210',
   'doctrine/lexer' => '1.2.1@e864bbf5904cb8f5bb334f99209b48018522f042',
   'dragonmantank/cron-expression' => 'v3.1.0@7a8c6e56ab3ffcc538d05e8155bb42269abf1a0c',
@@ -50,6 +51,7 @@ final class Versions
   'league/commonmark' => '1.6.5@44ffd8d3c4a9133e4bd0548622b09c55af39db5f',
   'league/flysystem' => '1.1.4@f3ad69181b8afed2c9edf7be5a2918144ff4ea32',
   'league/mime-type-detection' => '1.7.0@3b9dff8aaf7323590c1d2e443db701eb1f9aa0d3',
+  'livewire/livewire' => 'v2.5.5@de192292d68276d831e5fd9824c80c3b78a21ddf',
   'monolog/monolog' => '2.2.0@1cb1cde8e8dd0f70cc0fe51354a59acad9302084',
   'nesbot/carbon' => '2.49.0@93d9db91c0235c486875d22f1e08b50bdf3e6eee',
   'nikic/php-parser' => 'v4.10.5@4432ba399e47c66624bc73c8c0f811e5c109576f',
@@ -159,7 +161,7 @@ final class Versions
   'symfony/debug' => 'v4.4.25@a8d2d5c94438548bff9f998ca874e202bb29d07f',
   'symfony/filesystem' => 'v5.3.0@348116319d7fb7d1faa781d26a48922428013eb2',
   'theseer/tokenizer' => '1.2.0@75a63c33a8577608444246075ea0af0d052e452a',
-  'laravel/laravel' => '1.0.0+no-version-set@',
+  'laravel/laravel' => 'dev-master@937fe760de086d6ebfbe20357cbfbabebea393a8',
 );
 
     private function __construct()
