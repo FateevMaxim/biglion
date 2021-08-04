@@ -17,7 +17,7 @@
                         <img class="img-full" src="{{ asset('storage/'.$ca->options->avatar)}}" alt="{{$ca->options->slug}}">
                     </a>
                     <div class="product-item_content">
-                        <a class="product-item_title" href="shop.html">{{ $ca->options->slug }} <span class="badge bg-primary">{{ $ca->options->taste }}</span></a>
+                        <a class="product-item_title" href="#">{{ $ca->options->slug }} <span class="badge bg-primary">{{ $ca->options->taste }}</span></a>
                         <span class="product-item_quantity">{{ $ca->qty }} x {{ $ca->price }} тенге</span>
                     </div>
                 </li>
