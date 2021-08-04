@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Artisan;
 class IndexController extends Controller
 {
     public function index (){
-        Artisan::call('livewire:publish --config');
         $brands = ProductsBrand::all();
         $categories = ProductsCategories::all();
         $products = Products::select('priceShop', 'id', 'brand', 'categoryName')->whereIn('id', ['47', '30', '63', '20'])->with(['brandBond'])->get(4);
