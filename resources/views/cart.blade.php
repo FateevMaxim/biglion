@@ -40,21 +40,17 @@
                                 @if($responceUrl->pg_status == "error")
                                 <div class="alert alert-danger" role="alert">
                                     <h4>Ошибка!</h4>
-                                    <p>{{ $responceUrl->pg_error_description }}</p>
                                 </div>
                                     @elseif($responceUrl->pg_status == "rejected")
                                             <div class="alert alert-danger" role="alert">
-                                                <h4>Ошибка!</h4>
-                                                <p>{{ $responceUrl->pg_description }}</p>
+                                                <h4>Отказ от платежа</h4>
                                             </div>
                                     @else
-                                        <div class="alert alert-danger" role="alert">
-                                            <h4>Платёж успешно!</h4>
-                                            <p>{{ $responceUrl->pg_description }}</p>
+                                        <div class="alert alert-success" role="alert">
+                                            <h4>Платёж успешно проведён!</h4>
+                                            <p>Мы свяжемся с Вам в ближайшее время</p>
                                         </div>
                                     @endif
-
-
 
                             <a href="/"> Вернуться на главную </a>
                             @else

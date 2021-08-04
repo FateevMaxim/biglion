@@ -183,15 +183,26 @@ class CartController extends Controller
     public function result(){
         $categories = ProductsCategories::all();
 
-        $curlArray = array(
-            'pg_merchant_id' => '540603',
+        $pg_merchant_id = '540603';
+        $secret_key = 'GdLpRspksTz5BCIK';
+        $randomId = Str::random(8);
+        $request = [
+            'pg_merchant_id'=> $pg_merchant_id,
             'pg_payment_id' => $_GET['pg_payment_id'],
-            'pg_salt' => $_GET['pg_salt'],
-            'pg_sig' => $_GET['pg_sig']
-        );
+            'pg_salt' => $randomId,
+        ];
+
+        //generate a signature and add it to the array
+        ksort($request); //sort alphabetically
+        array_unshift($request, 'get_status.php');
+        array_push($request, $secret_key); //add your secret key (you can take it in your personal cabinet on paybox system)
+
+        $request['pg_sig'] = md5(implode(';', $request)); // signature
+        unset($request[0], $request[1]);
+
         $ch = curl_init('https://api.paybox.money/get_status.php');
         curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $curlArray);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $request);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_HEADER, false);
