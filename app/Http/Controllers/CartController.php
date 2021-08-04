@@ -47,9 +47,10 @@ class CartController extends Controller
             $secret_key = "GdLpRspksTz5BCIK";
             $cartTotal = Cart::priceTotal(0, '', '');
             $randomId = Str::random(8);
-            //$resultUrl = "http://biglion/result";
-            $resultUrl = "https://big-lion.kz/result";
-
+            $resultUrl = "http://biglion/result";
+            //$resultUrl = "https://big-lion.kz/result";
+            $id = time().'-'.sprintf('%.3f',microtime());
+            $t = preg_replace('/(.*)-(.*)/','\1',$id);
             $request = $requestForSignature = [
                 'pg_order_id' =>  $t,
                 'pg_merchant_id' => $pg_merchant_id,
@@ -121,9 +122,6 @@ class CartController extends Controller
 
             $responceUrl = simplexml_load_string($html);
 
-
-            $id = time().'-'.sprintf('%.3f',microtime());
-            $t = preg_replace('/(.*)-(.*)/','\1',$id);
             $orderUser['order_sig'] = $request['pg_sig'];
             $orderUser['city'] = $usersData->city;
             $orderUser['name'] = $usersData->name;
@@ -184,6 +182,23 @@ class CartController extends Controller
     }
     public function result(){
         $categories = ProductsCategories::all();
-        return view('cart', compact('categories'));
+
+        $curlArray = array(
+            'pg_merchant_id' => '540603',
+            'pg_payment_id' => $_GET['pg_payment_id'],
+            'pg_salt' => $_GET['pg_salt'],
+            'pg_sig' => $_GET['pg_sig']
+        );
+        $ch = curl_init('https://api.paybox.money/get_status.php');
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $curlArray);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_HEADER, false);
+        $html = curl_exec($ch);
+        curl_close($ch);
+        $responceUrl = simplexml_load_string($html);
+
+        return view('cart', compact('categories', 'responceUrl'));
     }
 }

@@ -35,8 +35,27 @@
                                 <h1>Успешно</h1>
                                 <p>{{ session('message') }}</p>
                             <a href="/"> Вернуться на главную </a>
-                            @elseif(isset($_GET['pg_salt']))
-                                <h1>{{isset($_GET['pg_description'])}}</h1>
+                            @elseif(isset($responceUrl))
+
+                                @if($responceUrl->pg_status == "error")
+                                <div class="alert alert-danger" role="alert">
+                                    <h4>Ошибка!</h4>
+                                    <p>{{ $responceUrl->pg_error_description }}</p>
+                                </div>
+                                    @elseif($responceUrl->pg_status == "rejected")
+                                            <div class="alert alert-danger" role="alert">
+                                                <h4>Ошибка!</h4>
+                                                <p>{{ $responceUrl->pg_description }}</p>
+                                            </div>
+                                    @else
+                                        <div class="alert alert-danger" role="alert">
+                                            <h4>Платёж успешно!</h4>
+                                            <p>{{ $responceUrl->pg_description }}</p>
+                                        </div>
+                                    @endif
+
+
+
                             <a href="/"> Вернуться на главную </a>
                             @else
                                     @livewire('check-cart')
