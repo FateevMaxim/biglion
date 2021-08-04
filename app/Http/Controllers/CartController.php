@@ -47,15 +47,15 @@ class CartController extends Controller
             $secret_key = "GdLpRspksTz5BCIK";
             $cartTotal = Cart::priceTotal(0, '', '');
             $randomId = Str::random(8);
-            $resultUrl = "http://biglion/result";
-            //$resultUrl = "https://big-lion.kz/result";
+            //$resultUrl = "http://biglion/result";
+            $resultUrl = "https://big-lion.kz/result";
             $id = time().'-'.sprintf('%.3f',microtime());
             $t = preg_replace('/(.*)-(.*)/','\1',$id);
             $request = $requestForSignature = [
                 'pg_order_id' =>  $t,
                 'pg_merchant_id' => $pg_merchant_id,
-                //'pg_amount' => $cartTotal,
-                'pg_amount' => '100',
+                'pg_amount' => $cartTotal,
+                //'pg_amount' => '100',
                 'pg_description' => 'Оплата товара с интернет-магазина BigLion',
                 'pg_salt' => $randomId,
                 'pg_currency' => 'KZT',
