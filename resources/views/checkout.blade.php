@@ -260,10 +260,18 @@
                                         </div>--}}
                                         <h4 class="mb-3">Метод оплаты</h4>
                                         <div class="d-block my-3">
+                                            @php
+                                                foreach ($cart as $ca){
+                                                $cartColArr[] = $ca->options->marker;
+                                                }
+                                            $cartCol = collect($cartColArr);
+                                            @endphp
+                                            @if(!$cartCol->contains('testosterone'))
                                             <div class="custom-control">
                                                 <input id="credit" name="paymentMethod[]" type="radio" value="1" class="custom-control-input" checked="" required="">
                                                 <label class="custom-control-label" for="credit">Оплата картой</label>
                                             </div>
+                                            @endif
                                             <div class="custom-control">
                                                 <input id="deliveryGuy" name="paymentMethod[]" type="radio" value="2" class="custom-control-input" required="">
                                                 <label class="custom-control-label" for="deliveryGuy">Оплата курьеру</label>

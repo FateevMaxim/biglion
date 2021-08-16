@@ -3,7 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Products;
-use App\Models\ProductsCategories;
+use App\Models\Testosterone;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Livewire\Component;
 
@@ -62,6 +62,11 @@ class CheckCart extends Component
         $cart = Cart::content();
         foreach ($cart as $cartProduct){
             $product = Products::select('slug', 'available')->where('slug', $cartProduct->name)->take(1)->get();
+
+            if ($product->count() === 0) {
+                $product = Testosterone::select('slug', 'available')->where('slug', $cartProduct->name)->take(1)->get();
+            }
+
             if(!$product || $product[0]->available == 0){
                 $this->checkout_message .= "Нет товара на складе";
             }elseif($product[0]->available < $cartProduct->qty){
@@ -71,7 +76,7 @@ class CheckCart extends Component
         if(!empty($this->checkout_message)){
             return $this->checkout_message;
         }else{
-            $this->redirectRoute('checkout');
+            return redirect()->route('checkout');
         }
     }
 
