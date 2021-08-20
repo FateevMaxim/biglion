@@ -413,7 +413,7 @@
                                     Адрес : г.Алматы, ул. Гоголя, д.75
                                 </li>
                                 <li>
-                                    <a href="mailto://manager@big-lion.kz">manager@big-lion.kz</a>
+                                    <a href="mailto://manager@big-lion.kz">Написать письмо</a>
                                 </li>
                                 <li>
                                     <a href="tel://+77003033360">Телефон : +7 700 303 3360</a>
