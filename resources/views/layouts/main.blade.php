@@ -4,9 +4,14 @@
 <head>
     <title>Big Lion - @yield('title')</title>
     @yield('meta')
+    <link rel="canonical" href="https://big-lion.kz/">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Купить спортивное питание в Алматы, Казахстане с доставкой">
+    <meta property="og:url" content="https://big-lion.kz/">
+    <meta property="og:site_name" content="Интернет магазин спортивного питания Big-Lion">
     <meta name="robots" content="index, follow" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
