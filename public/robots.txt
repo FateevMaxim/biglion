@@ -1,2 +1,4 @@
 User-agent: *
 Disallow:
+Sitemap: https://big-lion.kz/sitemap.xml
+Clean-Param: utm_source&utm_medium&utm_campaign
