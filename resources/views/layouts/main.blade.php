@@ -327,7 +327,7 @@
                                 </a>
                             </div>
                             <p class="short-desc mb-2">Интернет-магазин спортивного питания</p>
-                            <div class="social-link pt-2">
+                            {{--<div class="social-link pt-2">
                                 <ul>
                                     <li>
                                         <a href="#" data-tippy="Twitter" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
@@ -350,7 +350,7 @@
                                         </a>
                                     </li>
                                 </ul>
-                            </div>
+                            </div>--}}
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6 pt-8 pt-lg-0">
