@@ -968,6 +968,9 @@ img {
     -o-transition: all 300ms ease;
     transition: all 300ms ease;
 }
+.scroll-to-top:hover {
+    background-color: #e4a101;
+}
 .scroll-to-top.show {
     opacity: 1;
     visibility: visible;
@@ -1382,6 +1385,12 @@ img {
     text-transform: uppercase;
     display: block;
     padding: 0 30px;
+}
+.mobile-menu_wrapper.open .offcanvas-body, .offcanvas-minicart_wrapper.open .offcanvas-body, .offcanvas-search_wrapper.open .offcanvas-body {
+    visibility: visible;
+    left: 0;
+    opacity: 1;
+    z-index: 999;
 }
 .offcanvas-minicart_wrapper .offcanvas-body {
     -webkit-box-shadow: 0px 0 15px rgba(0, 0, 0, 0.2);
