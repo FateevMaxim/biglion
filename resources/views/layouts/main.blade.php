@@ -58,7 +58,7 @@
     <!-- Style CSS -->
    <link rel="stylesheet" href="{{asset('css/mainpage.css')}}">
 
-    <link rel="preload" href="{{asset('css/style.min.css')}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="{{asset('css/style.css')}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="{{asset('css/style.css')}}"></noscript>
     <!-- <link rel="stylesheet" href="assets/css/style.min.css"> -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
