@@ -29,7 +29,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('images/favicon/favicon-32x32.png')}}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{asset('images/favicon/favicon-96x96.png')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicon/favicon-16x16.png')}}">
-    <link rel="manifest" href={{asset('images/favicon/manifest.json')}}">
+    <link rel="manifest" href={{asset('images/favicon/manifest.json')}}>
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="{{asset('images/favicon/ms-icon-144x144.png')}}">
     <meta name="theme-color" content="#ffffff">
@@ -56,7 +56,10 @@
     <!-- <link rel="stylesheet" href="assets/css/plugins/plugins.min.css"> -->
 
     <!-- Style CSS -->
-   <link rel="stylesheet" href="{{asset('css/style.css')}}">
+   <link rel="stylesheet" href="{{asset('css/mainpage.css')}}">
+
+    <link rel="preload" href="{{asset('css/style.css')}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{asset('css/style.css')}}"></noscript>
     <!-- <link rel="stylesheet" href="assets/css/style.min.css"> -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BRJ37M4H34"></script>
