@@ -7,7 +7,8 @@
     <meta property="og:title" content="Купить спортивное питание от Big Lion, лучшая цена в Алматы, Казахстане!">
 @endsection
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="preload" href="{{asset('css/style.css')}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{asset('css/style.css')}}"></noscript>
 @endsection
 @section('content')
     <main class="main-content">
