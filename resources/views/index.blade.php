@@ -34,7 +34,7 @@
                                         <div class="inner-img">
                                             <div class="scene fill">
                                                 <div class="expand-width text-center" data-depth="0.2">
-                                                    <img src="{{ asset('/storage/'.$pieces[0]) }}" width="60%" alt="{{ $slider->categoryName }}">
+                                                    <img src="{{ asset('/storage/'.$pieces[0]) }}" width="60%"  alt="{{ $slider->categoryName }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -69,7 +69,7 @@
                     <div class="product-custom-col col-12">
                         <div class="product-category-item">
                             <a class="product-category-img img-zoom-effect" href="/shop/category/{{$category->id}}">
-                                <img src="{{ asset('images/product/top-category/'.$category->category_img) }}" alt="{{ $category->category }}">
+                                <img src="{{ asset('images/product/top-category/'.$category->category_img) }}" width="" height="" alt="{{ $category->category }}">
                             </a>
                             <div class="product-category-content pt-5">
                                 <h2 class="title">
@@ -94,7 +94,7 @@
                     <div class="col-lg-6 pt-md-8 pt-lg-0">
                         <div class="banner-item img-hover-effect">
                             <div class="banner-img img-zoom-effect">
-                                <img class="img-full" src="{{ asset('/images/banner/'.$imgBanner.'.jpg') }}" alt="{{ $product->categoryName }}">
+                                <img class="img-full" src="{{ asset('/images/banner/'.$imgBanner.'.jpg') }}" width="" height="" alt="{{ $product->categoryName }}">
                                 <div class="inner-content text-white @if($imgBanner > 2) text-right text-night-rider @endif ">
                                     <h3 class="offer">{{ number_format($product->priceShop, 0, '', ' ') }} тенге</h3>
                                     <h2 class="title">{{ $product->brandBond->brand }}<br>{{ $product->categoryName }}</h2>
@@ -121,7 +121,7 @@
                     <div class="col-lg-4">
                         <div class="shipping-item">
                             <div class="shipping-img">
-                                <img src="{{ asset('images/shipping/icon/earphones.png') }}" alt="Shipping Icon">
+                                <img src="{{ asset('images/shipping/icon/earphones.png') }}" width="" height="" alt="Shipping Icon">
                             </div>
                             <div class="shipping-content">
                                 <h2 class="title"><a href="/delivery" class="text-decoration-underline">Бесплатная доставка</a></h2>
@@ -132,7 +132,7 @@
                     <div class="col-lg-4 pt-4 pt-lg-0">
                         <div class="shipping-item">
                             <div class="shipping-img">
-                                <img src="{{ asset('images/shipping/icon/plane.png') }}" alt="Shipping Icon">
+                                <img src="{{ asset('images/shipping/icon/plane.png') }}" width="" height="" alt="Shipping Icon">
                             </div>
                             <div class="shipping-content">
                                 <h2 class="title">Быстрая консультация</h2>
@@ -143,7 +143,7 @@
                     <div class="col-lg-4 pt-4 pt-lg-0">
                         <div class="shipping-item">
                             <div class="shipping-img">
-                                <img src="{{ asset('images/shipping/icon/shield.png') }}" alt="Shipping Icon">
+                                <img src="{{ asset('images/shipping/icon/shield.png') }}" width="" height="" alt="Shipping Icon">
                             </div>
                             <div class="shipping-content">
                                 <h2 class="title">Защита оплаты</h2>
@@ -211,7 +211,7 @@
                                 @foreach($brands as $brand)
                                     <div class="swiper-slide">
                                         <a class="brand-item" href="/shop/brand/{{ $brand->id }}">
-                                            <img src="{{ asset('images/brand/'.$brand->brand_img) }}" alt="{{ $brand->brand }}">
+                                            <img src="{{ asset('images/brand/'.$brand->brand_img) }}" width="" height="" alt="{{ $brand->brand }}">
                                         </a>
                                     </div>
                                 @endforeach
