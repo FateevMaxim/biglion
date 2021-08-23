@@ -51,15 +51,14 @@
     {{--<link rel="stylesheet" href="{{asset('css/plugins/ion.rangeSlider.min.css')}}" />--}}
 
     @livewireStyles
+
+    @yield('style')
     <!-- Minify Version -->
     <!-- <link rel="stylesheet" href="assets/css/vendor/vendor.min.css"> -->
     <!-- <link rel="stylesheet" href="assets/css/plugins/plugins.min.css"> -->
 
     <!-- Style CSS -->
    <link rel="stylesheet" href="{{asset('css/mainpage.css')}}">
-
-    <link rel="preload" href="{{asset('css/style.css')}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{asset('css/style.css')}}"></noscript>
     <!-- <link rel="stylesheet" href="assets/css/style.min.css"> -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BRJ37M4H34"></script>

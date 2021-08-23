@@ -6,6 +6,10 @@
     <meta name="description" content="Купить инъекционные стероиды и стероиды в таблетках от официального поставщика! У нас низкая цена, доставка по Алматы и всему Казахстану. Только качественные препараты напрямую от производителей. Balkan Pharmaceuticals (балкан фарма), Horizon Pharmaceuticals, Ice Pharmaceuticals">
     <meta property="og:title" content="Купить инъекционные стероиды, стероиды в таблетках, самая низкая цена в Алматы, Казахстане! Balkan Pharmaceuticals (балкан фарма), Horizon Pharmaceuticals, Ice Pharmaceuticals">
 @endsection
+@section('style')
+    <link rel="preload" href="{{asset('css/style.css')}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{asset('css/style.css')}}"></noscript>
+@endsection
 @section('content')
     <main class="main-content">
         <div class="breadcrumb-area breadcrumb-height" data-bg-image="{{ asset('images/breadcrumb/bg/1-1-1920x400-t.jpg') }}">
