@@ -211,7 +211,7 @@
                                 @foreach($brands as $brand)
                                     <div class="swiper-slide">
                                         <a class="brand-item" href="/shop/brand/{{ $brand->id }}">
-                                            <img src="{{ asset('images/brand/'.$brand->brand_img) }}" width="" height="" alt="{{ $brand->brand }}">
+                                            <img src="{{ asset('images/brand/'.$brand->brand_img) }}" width="auto" height="auto" alt="{{ $brand->brand }}">
                                         </a>
                                     </div>
                                 @endforeach
