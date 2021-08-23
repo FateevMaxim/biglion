@@ -455,45 +455,64 @@ button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disab
 .text-decoration-underline {
     text-decoration: underline !important;
 }
-.pt-md-8 {
-    padding-top: 2.5rem !important;
-}
-.pb-md-0 {
-    padding-bottom: 0 !important;
-}
-.d-lg-block {
-    display: block !important;
-}
-.d-lg-none {
-    display: none !important;
-}
-.order-lg-1 {
-    -webkit-box-ordinal-group: 2 !important;
-    -webkit-order: 1 !important;
-    -ms-flex-order: 1 !important;
-    order: 1 !important;
+
+@media (min-width: 768px) {
+    .d-md-block {
+        display: block !important;
+    }
+    .d-md-none {
+        display: none !important;
+    }
+    .pt-md-8 {
+        padding-top: 2.5rem !important;
+    }
+    .pb-md-0 {
+        padding-bottom: 0 !important;
+    }
 }
 
-.order-lg-2 {
-    -webkit-box-ordinal-group: 3 !important;
-    -webkit-order: 2 !important;
-    -ms-flex-order: 2 !important;
-    order: 2 !important;
+@media (min-width: 992px) {
+    .d-lg-block {
+        display: block !important;
+    }
+    .d-lg-none {
+        display: none !important;
+    }
+    .order-lg-1 {
+        -webkit-box-ordinal-group: 2 !important;
+        -webkit-order: 1 !important;
+        -ms-flex-order: 1 !important;
+        order: 1 !important;
+    }
+
+    .order-lg-2 {
+        -webkit-box-ordinal-group: 3 !important;
+        -webkit-order: 2 !important;
+        -ms-flex-order: 2 !important;
+        order: 2 !important;
+    }
+    .me-lg-0 {
+        margin-right: 0 !important;
+    }
+    .py-lg-0 {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    .pt-lg-0 {
+        padding-top: 0 !important;
+    }
 }
-.me-lg-0 {
-    margin-right: 0 !important;
+
+
+@media (min-width: 1200px) {
+    .py-xl-0 {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
 }
-.py-lg-0 {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-}
-.pt-lg-0 {
-    padding-top: 0 !important;
-}
-.py-xl-0 {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-}
+
+
+
 html {
     scroll-behavior: smooth;
 }
@@ -546,9 +565,24 @@ img {
     -o-object-position: center center;
     object-position: center center;
 }
+::-moz-selection {
+     background-color: #e4a101;
+     color: #fff;
+ }
+::selection {
+    background-color: #e4a101;
+    color: #fff;
+}
 /* ---Section Space--- */
 .section-space-top-100 {
     padding-top: 100px;
+}
+
+/* ---Custom Container--- */
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1310px;
+    }
 }
 
 @media (max-width: 991.98px) {

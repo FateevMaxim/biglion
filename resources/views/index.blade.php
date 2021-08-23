@@ -6,10 +6,7 @@
     <meta name="description" content="Big Lion - продажа оригинального спортивного питания напрямую от производителей. Купить спортпит в Алматы и Казахстане с гарантией доставки. Самые низкие цены!">
     <meta property="og:title" content="Купить спортивное питание в Алматы, Казахстане с доставкой от Big Lion">
 @endsection
-@section('style')
-    <link rel="preload" href="{{asset('css/style.css')}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{asset('css/style.css')}}"></noscript>
-@endsection
+
 @section('content')
     <!-- Begin Slider Area -->
     <div class="slider-area">
