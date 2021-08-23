@@ -52,7 +52,7 @@
 
     @livewireStyles
 
-    @yield('style')
+
     <!-- Minify Version -->
     <!-- <link rel="stylesheet" href="assets/css/vendor/vendor.min.css"> -->
     <!-- <link rel="stylesheet" href="assets/css/plugins/plugins.min.css"> -->
@@ -61,6 +61,7 @@
    <link rel="stylesheet" href="{{asset('css/mainpage.css')}}">
     <!-- <link rel="stylesheet" href="assets/css/style.min.css"> -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
+    @yield('style')
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BRJ37M4H34"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
