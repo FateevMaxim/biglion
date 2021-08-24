@@ -413,7 +413,7 @@
                         <div class="widget-contact-info pb-2">
                             <ul>
                                 <li>
-                                    Адрес : г.Алматы, ул. Гоголя, д.75
+                                    Адрес : г.Алматы, ул. Гоголя, д.50
                                 </li>
                                 <li>
                                     <a href="mailto://manager@big-lion.kz">Написать письмо</a>
@@ -425,7 +425,7 @@
                         </div>
                         <div class="payment-method">
                             <a href="#">
-                                <img src="{{asset('images/payment/1.png')}}" alt="Payment Method">
+                                <img src="{{asset('images/payment/1.png')}}" alt="Методы оплаты">
                             </a>
                         </div>
                     </div>
