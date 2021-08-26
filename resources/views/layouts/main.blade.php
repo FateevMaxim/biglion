@@ -491,14 +491,17 @@
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/83359600" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BRJ37M4H34"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-206057535-1">
+</script>
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-BRJ37M4H34');
+    gtag('config', 'UA-206057535-1');
 </script>
+
 
 </body>
 
