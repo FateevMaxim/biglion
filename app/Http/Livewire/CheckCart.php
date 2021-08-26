@@ -12,6 +12,7 @@ class CheckCart extends Component
     public array $quantity = [];
     public $cart;
     public $checkout_message = "";
+    public $emptyCart_message = "";
 
     public function mount(){
         if (empty($this->cart)){
@@ -60,21 +61,27 @@ class CheckCart extends Component
 
     public function checkoutCart(){
         $cart = Cart::content();
-        foreach ($cart as $cartProduct){
-            $product = Products::select('slug', 'available')->where('slug', $cartProduct->name)->take(1)->get();
+        if ($cart->count() === 0){
+            $this->emptyCart_message = "Нет товаров в корзине";
+        }else{
+            foreach ($cart as $cartProduct){
+                $product = Products::select('slug', 'available')->where('slug', $cartProduct->name)->take(1)->get();
 
-            if ($product->count() === 0) {
-                $product = Testosterone::select('slug', 'available')->where('slug', $cartProduct->name)->take(1)->get();
-            }
+                if ($product->count() === 0) {
+                    $product = Testosterone::select('slug', 'available')->where('slug', $cartProduct->name)->take(1)->get();
+                }
 
-            if(!$product || $product[0]->available == 0){
-                $this->checkout_message .= "Нет товара на складе";
-            }elseif($product[0]->available < $cartProduct->qty){
-                $this->checkout_message .= $product[0]->available." шт. ".$cartProduct->options->slug."; <br />";
+                if(!$product || $product[0]->available == 0){
+                    $this->checkout_message .= "Нет товара на складе";
+                }elseif($product[0]->available < $cartProduct->qty){
+                    $this->checkout_message .= $product[0]->available." шт. ".$cartProduct->options->slug."; <br />";
+                }
             }
         }
         if(!empty($this->checkout_message)){
             return $this->checkout_message;
+        }elseif(!empty($this->emptyCart_message)){
+            return $this->emptyCart_message;
         }else{
             return redirect()->route('checkout');
         }

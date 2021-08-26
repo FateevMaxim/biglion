@@ -44,6 +44,11 @@
                 На складе осталось всего:<br /> {!! $checkout_message !!}
             </div>
         @endif
+        @if(!empty($emptyCart_message))
+            <div class="alert alert-warning" role="alert">
+                {!! $emptyCart_message !!}
+            </div>
+        @endif
     </div>
     {{--<div class="row">
         <div class="col-12">

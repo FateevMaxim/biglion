@@ -26,6 +26,11 @@
 
         </ul>
     </div>
+    @if(!empty($emptyCart_message))
+        <div class="alert alert-warning" role="alert">
+            {!! $emptyCart_message !!}
+        </div>
+    @endif
     <div class="minicart-item_total">
         <span>Итог товаров: {{ $cartCount }}</span>
         <span class="ammount">{{ $cartTotal }}тенге</span>

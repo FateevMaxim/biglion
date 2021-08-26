@@ -214,6 +214,7 @@
                             </div>
 
                     </div>
+
                     <div class="col-lg-6 col-12">
                         <div class="your-order">
                             <h3>Ваш заказ</h3>
