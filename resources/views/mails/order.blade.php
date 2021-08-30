@@ -21,7 +21,6 @@
     <table>
 @foreach($cart as $cartProduct)
     <tr class="cart_item">
-        <td><img src="{{ asset('storage/'.$cartProduct->options->avatar)}}" alt="{{$cartProduct->options->slug}}"></td>
         <td class="cart-product-name">{{ $cartProduct->options->slug }} <span class="badge bg-primary">{{ $cartProduct->options->taste }}</span></td>
         <td class="cart-product-total"><span class="amount">{{ $cartProduct->price * $cartProduct->qty }} тенге</span></td>
     </tr>
