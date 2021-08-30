@@ -38,7 +38,7 @@
 
                                 <h1>Успешно</h1>
                                 <p>{{ session('message') }}</p>
-                            <a href="/"> Вернуться на главную </a>
+                            <a href="/"> <button class="btn btn-primary">Вернуться на главную </button></a>
                             @elseif(isset($responceUrl))
 
                                 @if($responceUrl->pg_status == "error")

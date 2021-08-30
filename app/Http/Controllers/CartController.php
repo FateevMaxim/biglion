@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderMail;
 use App\Models\Orders;
 use App\Models\OrderUsers;
 use App\Models\Products;
 use App\Models\ProductsCategories;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
 use function PHPUnit\Framework\returnSelf;
@@ -144,6 +146,10 @@ class CartController extends Controller
                 $saveOrderData = new Orders($orderData);
                 $saveOrderData->save();
             }
+            $sendEmail = new OrderMail();
+            $sendEmail->subject = "Заказ с сайта";
+            $sendEmail->markdown('mails.order', compact('usersData'));
+            Mail::to('manager@big-lion.kz')->send($sendEmail);
             Cart::destroy();
             return Redirect::to((string)$responceUrl->pg_redirect_url);
         }else{
@@ -175,6 +181,12 @@ class CartController extends Controller
                 $saveOrderData = new Orders($orderData);
                 $saveOrderData->save();
             }
+
+            $sendEmail = new OrderMail();
+            $sendEmail->subject = "Заказ с сайта";
+            $sendEmail->markdown('mails.order', compact('usersData'));
+            Mail::to('manager@big-lion.kz')->send($sendEmail);
+
             Cart::destroy();
 
             return redirect()->route('cart')->with('message', 'Успешное оформление заказа!');
