@@ -21,7 +21,7 @@
     <table>
 @foreach($cart as $cartProduct)
     <tr class="cart_item">
-        <td class="cart-product-name">{{ $cartProduct->options->slug }} <span class="badge bg-primary">{{ $cartProduct->options->taste }}</span></td>
+        <td class="cart-product-name">{{ $cartProduct->options->slug }} | {{ $cartProduct->options->brand }} |<span>{{ $cartProduct->options->taste }}</span></td>
         <td class="cart-product-total"><span class="amount">{{ $cartProduct->price * $cartProduct->qty }} тенге</span></td>
     </tr>
 @endforeach
