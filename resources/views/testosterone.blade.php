@@ -29,6 +29,7 @@
                                 @if(Request::is('shop/subCategoryTestosterone/*')) <li>/ <a href="shop/subCategoryTestosterone/">{{$allProducts[0]->subCategoryBond->sub_category}}</a></li> @endif
                                 @if(Request::is('shop/brandTestosterone/*')) <li>/ <a href="shop/brandTestosterone/">{{$allProducts[0]->testosteroneBrandBond->brand}}</a></li> @endif
                             </ul>
+                            <p><b>Всего: </b>{{ $allProducts->total() }}</p>
                         </div>
                     </div>
                 </div>
@@ -106,9 +107,6 @@
                     <div class="col-xl-9 col-lg-8 order-lg-2 order-1">
                         <div class="product-topbar">
                             <ul>
-                                <li class="page-count">
-                                    Товары с <span> {{ $allProducts->firstItem() }}</span> по <span>{{ $allProducts->lastItem() }}</span> из <span>{{ $allProducts->total() }}</span>
-                                </li>
                                 <li class="product-view-wrap">
                                     <ul class="nav" role="tablist">
                                         <li class="grid-view" role="presentation">

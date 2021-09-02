@@ -455,7 +455,11 @@ button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disab
 .text-decoration-underline {
     text-decoration: underline !important;
 }
-
+@media (max-width: 750px) {
+    .slider-area {
+        display: none;
+    }
+}
 @media (min-width: 768px) {
     .d-md-block {
         display: block !important;
