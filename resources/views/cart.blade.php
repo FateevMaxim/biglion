@@ -69,3 +69,10 @@
     </main>
     <!-- Main Content Area End Here -->
 @endsection
+
+@section('customJs')
+    <!-- Event snippet for Начало оформления покупки conversion page -->
+    <script>
+        gtag('event', 'conversion', {'send_to': 'AW-310779911/QY7gCJmQi_ECEIfAmJQB'});
+    </script>
+@endsection

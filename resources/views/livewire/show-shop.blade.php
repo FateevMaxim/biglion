@@ -7,7 +7,7 @@
                     <i class="pe-7s-close" style="background-color:#941a00; color: #fff;"></i>
                 </a>
             @else
-                <a wire:click="addToCart({{ json_encode($product_slug) }})"href="#" data-tippy="Добавить в корзину" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
+                <a wire:click="addToCart({{ json_encode($product_slug) }})" href="#" data-tippy="Добавить в корзину" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
                     <i class="pe-7s-cart"></i>
                 </a>
             @endif
