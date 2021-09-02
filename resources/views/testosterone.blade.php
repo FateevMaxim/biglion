@@ -144,6 +144,7 @@
                                 <div class="product-grid-view row">
                                     @foreach($allProducts as $product)
                                         <div class="col-xl-4 col-sm-4 col-6 pt-6">
+                                            <div class="wholeProduct">
                                             <div class="product-item">
                                                 <div class="product-img img-zoom-effect">
                                                     <a href="/singleTestosterone/{{ $product->id }}">
@@ -159,6 +160,16 @@
                                                         </div>
                                                     </div>
                                                     @livewire('show-shop', ['product_slug' => $product->slug])
+                                                </div>
+                                            </div>
+                                                <div class="underDesc">
+                                                    <a class="product-name pb-1" href="/singleProduct/{{ $product->id }}">{{ $product->productName }} {{ $product->weight }}</a>
+                                                    <div class="price-box">
+                                                        <div class="price-box-holder">
+                                                            <span>Цена:</span>
+                                                            <span class="new-price text-primary">₸{{ number_format($product->priceShop, 0, '', ' ') }}</span>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
