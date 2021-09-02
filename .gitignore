@@ -1,4 +1,3 @@
-
 /public/hot
 /storage/*.key
 .env
@@ -11,5 +10,4 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
-/resources/views/shop.blade.php
-/resources/views/singleProduct.blade.php
+/resources/views/layouts/main.blade.php
