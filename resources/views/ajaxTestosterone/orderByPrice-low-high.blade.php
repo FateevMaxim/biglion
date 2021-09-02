@@ -5,39 +5,32 @@
         <div class="product-grid-view row">
             @foreach($allProducts as $product)
                 <div class="col-xl-4 col-sm-4 col-6 pt-6">
-                    <div class="product-item">
-                        <div class="product-img img-zoom-effect">
-                            <a href="/singleTestosterone/{{ $product->id }}">
-                                <img class="img-full" src="{{ asset('storage/'.$product->avatar)}}" alt="Product Images">
-                            </a>
+                    <div class="wholeProduct">
+                        <div class="product-item">
+                            <div class="product-img img-zoom-effect">
+                                <a href="/singleTestosterone/{{ $product->id }}">
+                                    <img class="img-full" src="{{ asset('storage/'.$product->avatar)}}" alt="Product Images">
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <a class="product-name pb-1" href="/singleTestosterone/{{ $product->id }}">{{ $product->testosteroneBrandBond->brand }} {{ $product->productName }} {{ $product->weight }}</a>
+                                <div class="price-box">
+                                    <div class="price-box-holder">
+                                        <span>Цена:</span>
+                                        <span class="new-price text-primary">₸{{ number_format($product->priceShop, 0, '', ' ') }}</span>
+                                    </div>
+                                </div>
+                                @livewire('show-shop', ['product_slug' => $product->slug])
+                            </div>
                         </div>
-                        <div class="product-content">
-                            <a class="product-name pb-1" href="/singleTestosterone/{{ $product->id }}">{{ $product->testosteroneBrandBond->brand }} {{ $product->productName }} {{ $product->weight }}</a>
+                        <div class="underDesc">
+                            <a class="product-name pb-1" href="/singleProduct/{{ $product->id }}">{{ $product->productName }} {{ $product->weight }}</a>
                             <div class="price-box">
                                 <div class="price-box-holder">
                                     <span>Цена:</span>
                                     <span class="new-price text-primary">₸{{ number_format($product->priceShop, 0, '', ' ') }}</span>
                                 </div>
                             </div>
-                            {{-- <div class="product-add-action">
-                                 <ul>
-                                     <li>
-                                         <a href="#" data-tippy="Добавить в корзину" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                             <i class="pe-7s-cart"></i>
-                                         </a>
-                                     </li>
-                                     <li class="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                                         <a href="#" data-tippy="Быстрый просмотр" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                             <i class="pe-7s-look"></i>
-                                         </a>
-                                     </li>
-                                     <li>
-                                         <a href="wishlist.html" data-tippy="Сохранить на будущее" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                             <i class="pe-7s-like"></i>
-                                         </a>
-                                     </li>
-                                 </ul>
-                             </div>--}}
                         </div>
                     </div>
                 </div>
