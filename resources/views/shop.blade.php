@@ -28,6 +28,7 @@
                                 @if(Request::is('shop/brand/*')) <li>/ <a href="/shop/brand/">{{$allProducts[0]->brandBond->brand}}</a></li> @endif
                                 @if(Request::is('shop/taste/*')) <li>/ <a href="/shop/taste/">{{$allProducts[0]->tasteBond->taste}}</a></li> @endif
                             </ul>
+                            <p><b>Всего: </b>{{ $allProducts->total() }}</p>
                         </div>
                     </div>
                 </div>
@@ -124,9 +125,6 @@
                     <div class="col-xl-9 col-lg-8 order-lg-2 order-1">
                         <div class="product-topbar">
                             <ul>
-                                <li class="page-count">
-                                    Товары с <span> {{ $allProducts->firstItem() }}</span> по <span>{{ $allProducts->lastItem() }}</span> из <span>{{ $allProducts->total() }}</span>
-                                </li>
                                 <li class="product-view-wrap">
                                     <ul class="nav" role="tablist">
                                         <li class="grid-view" role="presentation">
@@ -157,27 +155,38 @@
                             </ul>
                         </div>
                         <div class="wholeShop pb-5">
-                        <div class="tab-content text-charcoal pt-8">
+                        <div class="tab-content text-charcoal pt-4">
                             <div class="tab-pane fade show active" id="grid-view" role="tabpanel" aria-labelledby="grid-view-tab">
                                 <div class="product-grid-view row">
                                     @foreach($allProducts as $product)
 
                                         <div class="col-xl-4 col-sm-4 col-6 pt-6">
-                                            <div class="product-item">
-                                                <div class="product-img img-zoom-effect">
-                                                    <a href="/singleProduct/{{ $product->id }}">
-                                                        <img class="img-full" src="{{ asset('storage/'.$product->avatar)}}" alt="{{ $product->categoryName }}">
-                                                    </a>
+                                            <div class="wholeProduct">
+                                                <div class="product-item">
+                                                    <div class="product-img img-zoom-effect">
+                                                        <a href="/singleProduct/{{ $product->id }}">
+                                                            <img class="img-full" src="{{ asset('storage/'.$product->avatar)}}" alt="{{ $product->categoryName }}">
+                                                        </a>
+                                                    </div>
+                                                    <div class="product-content">
+                                                        <a class="product-name pb-1" href="/singleProduct/{{ $product->id }}">{{ $product->categoryName }} {{ $product->weight }}</a>
+                                                        <div class="price-box">
+                                                            <div class="price-box-holder">
+                                                                <span>Цена:</span>
+                                                                <span class="new-price text-primary">₸{{ number_format($product->priceShop, 0, '', ' ') }}</span>
+                                                            </div>
+                                                        </div>
+                                                        @livewire('show-shop', ['product_slug' => $product->slug])
+                                                    </div>
                                                 </div>
-                                                <div class="product-content">
-                                                    <a class="product-name pb-1" href="/singleProduct/{{ $product->id }}">{{ $product->brandBond->brand }} {{ $product->categoryName }} {{ $product->weight }}</a>
+                                                <div class="underDesc">
+                                                    <a class="product-name pb-1" href="/singleProduct/{{ $product->id }}">{{ $product->categoryName }} {{ $product->weight }}</a>
                                                     <div class="price-box">
                                                         <div class="price-box-holder">
                                                             <span>Цена:</span>
                                                             <span class="new-price text-primary">₸{{ number_format($product->priceShop, 0, '', ' ') }}</span>
                                                         </div>
                                                     </div>
-                                                    @livewire('show-shop', ['product_slug' => $product->slug])
                                                 </div>
                                             </div>
                                         </div>
