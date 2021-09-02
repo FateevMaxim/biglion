@@ -10,4 +10,4 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
-C:\OpenServer\domains\big\resources\views\layouts\main.blade.php
+/resources/views/layouts/main.blade.php
