@@ -271,12 +271,12 @@
                                                 }
                                             $cartCol = collect($cartColArr);
                                             @endphp
-                                            @if(!$cartCol->contains('testosterone'))
+                                            {{--@if(!$cartCol->contains('testosterone'))
                                             <div class="custom-control">
                                                 <input id="credit" name="paymentMethod[]" type="radio" value="1" class="custom-control-input" checked="" required="">
                                                 <label class="custom-control-label" for="credit">Оплата картой</label>
                                             </div>
-                                            @endif
+                                            @endif --}}
                                             <div class="custom-control">
                                                 <input id="deliveryGuy" name="paymentMethod[]" type="radio" value="2" class="custom-control-input" required="">
                                                 <label class="custom-control-label" for="deliveryGuy">Оплата курьеру</label>
