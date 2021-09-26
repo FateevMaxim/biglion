@@ -37,6 +37,6 @@
     </div>
     <div class="group-btn_wrap d-grid gap-2">
         <button wire:click="destroyCart" type="submit" class="btn btn-dark btn-primary-hover">Очистить корзину</button>
-            <a wire:click="checkoutCart" class="btn btn-dark btn-primary-hover">Перейти в корзину</a>
+            <a wire:click="checkoutCart" class="btn btn-dark btn-primary-hover">Перейти к оплате</a>
     </div>
 </div>

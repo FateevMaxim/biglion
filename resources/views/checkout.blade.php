@@ -72,10 +72,10 @@
                     </div>
                 </div>--}}
 
-                    <form action="{{ route('payment') }}" method="post">
+                    <form {{-- action="{{ route('payment') }}" method="post"--}}>
                         @csrf
                         <div class="row">
-                    <div class="col-lg-6 col-12">
+                    {{--<div class="col-lg-6 col-12">
                             <div class="checkbox-form">
                                 <h3>Детали оплаты</h3>
                                 <div class="row">
@@ -110,100 +110,8 @@
                                             <input placeholder="Квартира, подьезд, блок..." name="apartment" type="text" required>
                                         </div>
                                     </div>
-                                    {{--<div class="col-md-12">
-                                        <div class="checkout-form-list create-acc">
-                                            <input id="cbox" type="checkbox">
-                                            <label for="cbox">Create an account?</label>
-                                        </div>
-                                        <div id="cbox-info" class="checkout-form-list create-account">
-                                            <p>Create an account by entering the information below. If you are a returning
-                                                customer please login at the top of the page.</p>
-                                            <label>Account password <span class="required">*</span></label>
-                                            <input placeholder="password" type="password">
-                                        </div>
-                                    </div>--}}
                                 </div>
                                 <div class="different-address">
-                                    {{--<div class="ship-different-title">
-                                        <h3>
-                                            <label>Ship to a different address?</label>
-                                            <input id="ship-box" type="checkbox">
-                                        </h3>
-                                    </div>--}}
-                                    {{--<div id="ship-box-info" class="row">
-                                        <div class="col-md-12">
-                                            <div class="myniceselect country-select clearfix">
-                                                <label>Country <span class="required">*</span></label>
-                                                <select class="myniceselect nice-select wide">
-                                                    <option data-display="Bangladesh">Bangladesh</option>
-                                                    <option value="uk">London</option>
-                                                    <option value="rou">Romania</option>
-                                                    <option value="fr">French</option>
-                                                    <option value="de">Germany</option>
-                                                    <option value="aus">Australia</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="checkout-form-list">
-                                                <label>First Name <span class="required">*</span></label>
-                                                <input placeholder="" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="checkout-form-list">
-                                                <label>Last Name <span class="required">*</span></label>
-                                                <input placeholder="" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="checkout-form-list">
-                                                <label>Company Name</label>
-                                                <input placeholder="" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="checkout-form-list">
-                                                <label>Address <span class="required">*</span></label>
-                                                <input placeholder="Street address" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="checkout-form-list">
-                                                <input placeholder="Apartment, suite, unit etc. (optional)" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="checkout-form-list">
-                                                <label>Town / City <span class="required">*</span></label>
-                                                <input type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="checkout-form-list">
-                                                <label>State / County <span class="required">*</span></label>
-                                                <input placeholder="" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="checkout-form-list">
-                                                <label>Postcode / Zip <span class="required">*</span></label>
-                                                <input placeholder="" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="checkout-form-list">
-                                                <label>Email Address <span class="required">*</span></label>
-                                                <input placeholder="" type="email">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="checkout-form-list">
-                                                <label>Phone <span class="required">*</span></label>
-                                                <input type="text">
-                                            </div>
-                                        </div>
-                                    </div>--}}
                                     <div class="order-notes">
                                         <div class="checkout-form-list checkout-form-list-2">
                                             <label>Дополнительная информация</label>
@@ -213,7 +121,7 @@
                                 </div>
                             </div>
 
-                    </div>
+                    </div>--}}
 
                     <div class="col-lg-6 col-12">
                         <div class="your-order">
@@ -263,36 +171,24 @@
                                                 </div>
                                             </div>
                                         </div>--}}
-                                        <h4 class="mb-3">Метод оплаты</h4>
-                                        <div class="d-block my-3">
-                                            @php
-                                                foreach ($cart as $ca){
-                                                $cartColArr[] = $ca->options->marker;
-                                                }
-                                            $cartCol = collect($cartColArr);
-                                            @endphp
-                                            {{--@if(!$cartCol->contains('testosterone'))
-                                            <div class="custom-control">
-                                                <input id="credit" name="paymentMethod[]" type="radio" value="1" class="custom-control-input" checked="" required="">
-                                                <label class="custom-control-label" for="credit">Оплата картой</label>
-                                            </div>
-                                            @endif --}}
-                                            <div class="custom-control">
-                                                <input id="deliveryGuy" name="paymentMethod[]" type="radio" value="2" class="custom-control-input" required="">
-                                                <label class="custom-control-label" for="deliveryGuy">Оплата курьеру</label>
-                                            </div>
-                                        </div>
-                                        {{--<div class="card">
+                                        <h4 class="mb-3">Оплата и получение заказа</h4>
+                                        <div class="card">
                                             <div class="card-header" id="#payment-2">
                                                 <h5 class="panel-title">
                                                     <a href="#" class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false">
-                                                        Оплата курьеру
+                                                        Kaspi QR
                                                     </a>
                                                 </h5>
                                             </div>
                                             <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
                                                 <div class="card-body">
-                                                    <p>Оплатить курьеру наличными или Kaspi переводом при получении товара</p>
+                                                    <p>Для оформления заказа и уточнения деталей, пожалуйста, свяжитесь со специалистом</p>
+                                                    <div class="order-button-payment mb-5">
+                                                        <a href="https://wa.me/77003033360?text=Я хочу приобрести с помощью Kaspi QR @foreach($cart as $cartProduct)
+                                                        {{ $cartProduct->options->slug }} ({{ $cartProduct->options->taste }}) × {{ $cartProduct->qty }} |
+                                                        @endforeach
+                                                                "><button class="btn btn-secondary" type="button">Связаться </button><img src="{{ asset('images/product/icon/whatsapp.png') }}" width="48" alt="What's app"></a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -300,20 +196,42 @@
                                             <div class="card-header" id="#payment-3">
                                                 <h5 class="panel-title">
                                                     <a href="#" class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false">
-                                                        Оплата картой
+                                                        Kaspi RED
                                                     </a>
                                                 </h5>
                                             </div>
                                             <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
                                                 <div class="card-body">
-                                                    <p>Оплатить при помощи карты VISA/MasterCard</p>
+                                                    <p>Для оформления заказа и уточнения деталей, пожалуйста, свяжитесь со специалистом</p>
+                                                    <div class="order-button-payment mb-5">
+                                                        <a href="https://wa.me/77003033360?text=Я хочу приобрести с помощью Kaspi RED @foreach($cart as $cartProduct)
+                                                        {{ $cartProduct->options->slug }} ({{ $cartProduct->options->taste }}) × {{ $cartProduct->qty }} |
+                                                        @endforeach
+                                                                "><button class="btn btn-secondary" type="button">Связаться </button><img src="{{ asset('images/product/icon/whatsapp.png') }}" width="48" alt="What's app"></a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>--}}
-                                    </div>
-                                    <div class="order-button-payment">
-                                        <input value="Оплатить" type="submit">
-                                    </div>
+                                         </div>
+                                        <div class="card">
+                                            <div class="card-header" id="#payment-3">
+                                                <h5 class="panel-title">
+                                                    <a href="#" class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false">
+                                                        Kaspi рассрочка
+                                                    </a>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseOne" class="collapse" data-bs-parent="#accordion">
+                                                <div class="card-body">
+                                                    <p>Для оформления заказа и уточнения деталей, пожалуйста, свяжитесь со специалистом</p>
+                                                    <div class="order-button-payment mb-5">
+                                                        <a href="https://wa.me/77003033360?text=Я хочу приобрести с помощью Kaspi рассрочки @foreach($cart as $cartProduct)
+                                                         {{ $cartProduct->options->slug }} ({{ $cartProduct->options->taste }}) × {{ $cartProduct->qty }} |
+                                                        @endforeach
+                                                                "><button class="btn btn-secondary" type="button">Связаться </button><img src="{{ asset('images/product/icon/whatsapp.png') }}" width="48" alt="What's app"></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                         </div>
                                 </div>
                             </div>
                         </div>
