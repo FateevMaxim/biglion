@@ -22,7 +22,7 @@
                                 <li>
                                     <a href="/">Главная /</a>
                                 </li>
-                                <li><a href="/Shop">Магазин</a></li>
+                                <li><a href="/Shop">Спортивное питание</a></li>
                                 @if(Request::is('shop/category/*')) <li>/ <a href="/shop/category/">{{$allProducts[0]->categoryBond->category}}</a></li> @endif
                                 @if(Request::is('shop/purpose/*')) <li>/ <a href="/shop/purpose/">{{$allProducts[0]->purposeBond->purpose}}</a></li> @endif
                                 @if(Request::is('shop/brand/*')) <li>/ <a href="/shop/brand/">{{$allProducts[0]->brandBond->brand}}</a></li> @endif
