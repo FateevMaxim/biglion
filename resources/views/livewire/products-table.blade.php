@@ -2,7 +2,7 @@
 <div>
     <div class="selector-wrap color-option pb-55">
         <span class="selector-title">Вкус</span>
-        <select name="changeTaste" wire:model="changeTaste" class="nice-select wide rounded-0">
+        <select name="changeTaste" wire:model="changeTaste" class="selector-title nice-select wide rounded-0">
             @foreach($customTasteProduct as $taste)
                 <option value="{{$taste->taste}}">{{$taste->tasteBond->taste}}</option>
             @endforeach
