@@ -69,6 +69,20 @@
                 <h2 class="title mb-0">Категории</h2>
             </div>
             <div class="row">
+                @foreach($categoriesTest as $categoryTest)
+                    <div class="product-custom-col col-12">
+                        <div class="product-category-item">
+                            <a class="product-category-img img-zoom-effect" href="shop/categoryTestosterone/{{$categoryTest->id}}">
+                                <img src="{{ asset('images/product/top-category/'.$categoryTest->main_category_img) }}" width="" height="" alt="{{ $categoryTest->main_category }}">
+                            </a>
+                            <div class="product-category-content pt-5">
+                                <h2 class="title">
+                                    <a href="shop/categoryTestosterone/{{$categoryTest->id}}">{{ $categoryTest->main_category }}</a>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
                 @foreach($categories as $category)
                     <div class="product-custom-col col-12">
                         <div class="product-category-item">
