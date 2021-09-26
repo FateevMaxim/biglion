@@ -38,7 +38,7 @@
         <div class="shop-area section-space-y-axis-100">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-3 col-lg-4 order-lg-1 order-2s pt-10 pt-lg-0">
+                    <div class="col-xl-3 col-lg-4 order-lg-1 order-1 pt-10 pt-lg-0">
                         <div class="sidebar-area style-2">
                             {{--<div class="widgets-searchbox widgets-area py-6 mb-5">
                                 <form id="widgets-searchbox" action="#">
@@ -104,7 +104,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="col-xl-9 col-lg-8 order-lg-2 order-1">
+                    <div class="col-xl-9 col-lg-8 order-lg-2 order-2">
                         <div class="product-topbar">
                             <ul>
                                 <li class="product-view-wrap">
