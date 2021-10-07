@@ -375,10 +375,10 @@
                                     <i class="fa fa-chevron-right"></i>
                                     <a href="/offer">Публичная оферта</a>
                                 </li>
-                                <li>
+                                {{--<li>
                                     <i class="fa fa-chevron-right"></i>
                                     <a href="/details">Реквизиты</a>
-                                </li>
+                                </li>--}}
                             </ul>
                         </div>
                     </div>
