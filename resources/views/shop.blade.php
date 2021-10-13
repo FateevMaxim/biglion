@@ -168,6 +168,7 @@
                                                             <img class="img-full" src="{{ asset('storage/'.$product->avatar)}}" alt="{{ $product->categoryName }}">
                                                         </a>
                                                     </div>
+                                                    <div class="item-card__sticker"><div class="bonus _icon-xs"><img src="{{ asset('images/kaspi-red12.jpg')}}" style="height: auto;"></div></div>
                                                     <div class="product-content">
                                                         <a class="product-name pb-1" href="/singleProduct/{{ $product->id }}">{{ $product->categoryName }} {{ $product->weight }}</a>
                                                         <div class="price-box">
