@@ -119,7 +119,7 @@
                                             </a>
                                         </li>
                                         <li class="megamenu-holder">
-                                            <a href="/Shop">Магазин</a>
+                                            <a href="/Shop">Спортивное питание</a>
                                         </li>
                                         <li class="menu-item-has-children">
                                             <a href="/testosterone">
@@ -241,7 +241,7 @@
                                 </li>
                                 <li class="menu-item-has-children">
                                     <a href="/Shop">
-                                        <span class="mm-text">Магазин</span>
+                                        <span class="mm-text">Спортивное питание</span>
                                     </a>
                                 </li>
                                 <li class="menu-item-has-children">

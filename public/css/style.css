@@ -21977,6 +21977,9 @@ blockquote .user-name:before {
     top: 10px;
     left: 10px;
 }
+.bonus _icon-xs img {
+    width: 100px;
+}
 /*----------------------------------------*/
 /*  24. Modal
 /*----------------------------------------*/
