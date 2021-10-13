@@ -21974,7 +21974,7 @@ blockquote .user-name:before {
 }
 .item-card__sticker {
     position: absolute;
-    top: 0px;
+    top: 10px;
     left: 0px;
 }
 .bonus img {
