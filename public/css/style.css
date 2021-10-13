@@ -21980,6 +21980,11 @@ blockquote .user-name:before {
 .bonus img {
     width: 100px;
 }
+@media (max-width: 499.98px) {
+    .bonus img {
+        width: 65px;
+    }
+}
 /*----------------------------------------*/
 /*  24. Modal
 /*----------------------------------------*/
