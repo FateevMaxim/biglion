@@ -21972,7 +21972,11 @@ blockquote .user-name:before {
   margin-top: 97px;
   position: relative;
 }
-
+.item-card__sticker {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
 /*----------------------------------------*/
 /*  24. Modal
 /*----------------------------------------*/
