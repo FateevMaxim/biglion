@@ -21974,8 +21974,8 @@ blockquote .user-name:before {
 }
 .item-card__sticker {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 0px;
+    left: 0px;
 }
 .bonus img {
     width: 100px;
