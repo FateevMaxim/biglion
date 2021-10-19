@@ -43,6 +43,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -139,7 +140,7 @@
                     <div class="col-lg-4">
                         <div class="shipping-item">
                             <div class="shipping-img">
-                                <img src="{{ asset('images/shipping/icon/earphones.png') }}" width="" height="" alt="Shipping Icon">
+                                <img src="{{ asset('images/shipping/icon/earphones.png') }}" width="" height="" alt="Бесплатная доставка">
                             </div>
                             <div class="shipping-content">
                                 <h2 class="title"><a href="/delivery" class="text-decoration-underline">Бесплатная доставка</a></h2>
@@ -150,7 +151,7 @@
                     <div class="col-lg-4 pt-4 pt-lg-0">
                         <div class="shipping-item">
                             <div class="shipping-img">
-                                <img src="{{ asset('images/shipping/icon/plane.png') }}" width="" height="" alt="Shipping Icon">
+                                <img src="{{ asset('images/shipping/icon/plane.png') }}" width="" height="" alt="Консультация">
                             </div>
                             <div class="shipping-content">
                                 <h2 class="title">Быстрая консультация</h2>
@@ -161,11 +162,11 @@
                     <div class="col-lg-4 pt-4 pt-lg-0">
                         <div class="shipping-item">
                             <div class="shipping-img">
-                                <img src="{{ asset('images/shipping/icon/shield.png') }}" width="" height="" alt="Shipping Icon">
+                                <img src="{{ asset('images/shipping/icon/kaspiicon.png') }}" width="" height="" alt="Kaspi Red">
                             </div>
                             <div class="shipping-content">
-                                <h2 class="title">Защита оплаты</h2>
-                                <p class="short-desc mb-0">Безопасность проведения оплаты гарантируется!</p>
+                                <h2 class="title">Оплата с помощью Kaspi Red</h2>
+                                <p class="short-desc mb-0">Начните работу над телом сегодня, платите позже!</p>
                             </div>
                         </div>
                     </div>

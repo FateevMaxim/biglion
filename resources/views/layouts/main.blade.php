@@ -399,11 +399,6 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="payment-method">
-                            <a href="#">
-                                <img src="{{asset('images/payment/1.png')}}" alt="Методы оплаты">
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
