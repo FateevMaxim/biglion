@@ -80,7 +80,7 @@
                                     @livewire('products-table', ['product_id' => $exactProduct[0]->id, 'product_slug' =>$exactProduct[0]->slug, 'categoryName' =>$exactProduct[0]->categoryName ])
                             <div>
                                 <a href="https://wa.me/77003033360?text=Я хочу проконсультироваться по поводу {{ $exactProduct[0]->categoryBond->category }} {{ $exactProduct[0]->brandBond->brand }} {{ $exactProduct[0]->categoryName }}
-                                        "><button class="btn btn-primary" type="button">Бесплатная консультация со специалистом </button><img src="{{ asset('images/product/icon/whatsapp.png') }}" width="48" alt="What's app"></a>
+                                        "><img src="{{ asset('images/product/icon/whatsapp.png') }}" width="48" alt="What's app"><button class="btn btn-primary" type="button">Бесплатная консультация со специалистом </button></a>
                             </div>
                             <div class="product-category pb-3">
                                 <span class="title">Категория :</span>

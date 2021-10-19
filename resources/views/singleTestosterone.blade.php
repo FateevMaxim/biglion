@@ -81,7 +81,7 @@
                             @livewire('testosterone-table', ['product_id' => $exactProduct[0]->id, 'product_slug' =>$exactProduct[0]->slug, 'productName' =>$exactProduct[0]->productName ])
                             <div>
                                 <a href="https://wa.me/77003033360?text=Я хочу проконсультироваться по поводу {{ $exactProduct[0]->mainCategoryBond->main_category }} {{ $exactProduct[0]->testosteroneBrandBond->brand }} {{ $exactProduct[0]->productName }} {{ $exactProduct[0]->weight }}
-                                        "><button class="btn btn-primary" type="button">Бесплатная консультация со специалистом </button><img src="{{ asset('images/product/icon/whatsapp.png') }}" width="48" alt="What's app"></a>
+                                        "><img src="{{ asset('images/product/icon/whatsapp.png') }}" width="48" alt="What's app"><button class="btn btn-primary" type="button">Бесплатная консультация со специалистом </button></a>
                             </div>
                             {{--<ul class="quantity-with-btn pb-9">
                                 <li class="quantity">
